@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/find/find",
+    "pages/mine/mine",
+    "pages/doctor/doctor",
+    "pages/doctorlist/doctorlist",
+    "pages/article/article",
+    "pages/ilike/ilike",
+    "pages/comments/comments",
+    "pages/collection/collection",
+    "pages/myinfo/myinfo",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/changeName/changeName",
+    "pages/more/more",
+    "pages/hospital/hospital",
+    "pages/address/address",
+    "pages/hospitalDoctorlist/hospitalDoctorlist",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "医生之家",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "##009966",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "image/home_active.png",
+        "iconPath": "image/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "image/discovery_active.png",
+        "iconPath": "image/discovery.png",
+        "pagePath": "pages/find/find",
+        "text": "发现"
+      },
+      {
+        "selectedIconPath": "image/mine_active.png",
+        "iconPath": "image/mine.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

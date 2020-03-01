@@ -1,0 +1,130 @@
+/* pages/index/index.wxss */
+swiper {
+  width: 100%;
+  height: 380rpx;
+}
+.slide-image{
+  width: 100%;
+  display: block;  
+}
+.search{
+     padding :20rpx 0;
+	display: flex;
+  	flex-direction: row;
+  	height: 50rpx;
+	align-items: center;
+  background: #088d5a;
+}
+
+.search .scan{
+	display: flex;
+  	flex-direction: column;
+	align-items: center;
+	width: 10%;
+}
+
+.search .search-input{
+	padding: 5rpx;
+	background-color: #FFFFFF;
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	width: 400%;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+	align-items: center;
+  position: relative;
+}
+.search-input .searchBtn{
+  display: flex;
+  position: absolute;
+  right: 5rpx;
+  top:3rpx;
+  bottom: 3rpx;
+  align-items: center;
+  justify-content: center; 
+}
+
+.search-icon{
+	width: 50rpx;
+	height: 50rpx;
+}
+.serach-text{
+    font-size: 14px;
+}
+.search-input .serach-text{
+    width: 500rpx;
+}
+.home_grids{
+  border-top:1rpx solid #D9D9D9;
+  overflow:hidden;
+  margin-top: 0px;
+}
+.home_grid{
+  position: relative;
+  float:left;
+  padding:5px 5px;
+  width: 33.33333333%;
+  box-sizing: border-box;
+  border-right: 1rpx solid #D9D9D9;
+  border-bottom: 1rpx solid #D9D9D9;
+}
+.home_icon{
+  width:50px;
+  height: 50px;
+  margin-left: 30px;
+}
+.home_grid_text{
+  text-align: center;
+}
+.item-list-group{
+  padding: 10rpx 0rpx;
+}
+.item-list-group .item-group{
+  padding: 10rpx 0;
+  border-bottom: 1px solid #D4D4D4;
+  display:flex;
+}
+.item-group .doctorimg{
+  width: 80rpx;
+  height:100rpx;
+  margin-right:20rpx;
+}
+.item-group .info-group{
+  flex:1;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.info-group .title{
+  font: 32rpx;
+}
+.info-group .dinfo{
+  font-size: 20rpx;
+  color: #f57208;
+}
+.info-group .faninfo{
+  font-size: 20rpx;
+  color: #f57208;
+}
+.popular{
+  font-size: 50rpx;
+  color: #067248;
+}
+.hospital{
+  display:flex;
+  position: relative;
+}
+.address{
+ position: absolute;
+ top:15rpx;
+ left:220rpx;
+}
+.downmore{
+  width: 40rpx;
+  height:30rpx;
+  position: absolute;
+  top:24rpx;
+  left: 280rpx;
+}

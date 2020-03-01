@@ -1,0 +1,15 @@
+<!--pages/myinfo/myinfo.wxml-->
+<view class="info-list">
+  <view class="list-item"bindtap="changeAvatar">  
+    <text class="item-text" >头像</text>
+    <image class="item-image" src="{{userInfo.avatar}}"></image>
+    <image class="image" src="/image/right.png"></image>
+  </view>
+  <view class="lineLong"></view>
+  <view class="list-item"bindtap="changeName">  
+    <text class="item-text" >昵称</text>
+    <text class="text" >{{userInfo.nickname}}</text>
+    <image class="image" src="/image/right.png"></image>
+  </view>
+  <view class="lineShort"></view>
+  </view>

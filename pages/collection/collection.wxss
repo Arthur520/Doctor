@@ -1,0 +1,28 @@
+/* pages/collection/collection.wxss */
+.item-list-group{
+  padding: 10rpx 0rpx;
+}
+.item-list-group .item-group{
+  padding: 10rpx 0;
+  border-bottom: 1px solid #D4D4D4;
+  display:flex;
+}
+.item-group .img{
+  width: 80rpx;
+  height:100rpx;
+  margin-right:20rpx;
+}
+.info{
+  position: relative;
+}
+.info-group .info{ 
+  padding: 10rpx 10rpx;
+  
+  position: absolute;
+  left:90rpx;
+  display: -webkit-box;
+   -webkit-line-clamp:2;
+   overflow: hidden;
+   -webkit-box-orient: vertical;
+   text-overflow:clip;
+}

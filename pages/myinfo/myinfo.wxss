@@ -1,0 +1,48 @@
+/* pages/myinfo/myinfo.wxss */
+.lineShort {
+    width: 100%;
+    height: 1px;
+    background-color: gainsboro;
+    margin-top: 1px;
+}
+.lineLong {
+    width: 100%;
+    height: 1px;
+    background-color: gainsboro;
+    margin-top: 8px;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top:20px;
+}
+.list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80rpx;
+  position: relative;
+}
+.list-item .item-image {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 10rpx;
+  position: absolute;
+  right:40rpx;
+}
+.item-text {
+  font-size: 25rpx;
+  margin-left: 20rpx;
+}
+.list-item .text{
+  position: absolute;
+  right:40rpx;
+}
+.list-item .image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right:0;
+}

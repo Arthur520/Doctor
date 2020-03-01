@@ -1,0 +1,51 @@
+<!--pages/comments/comments.wxml-->
+ <view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">医生</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">文章</view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+<swiper-item class="item-list-group">
+    <view class="review-list">
+  <block wx:if="{{length!=0}}">
+  <block wx:for="{{doctorReviewList}}" wx:key="id" wx:for-index="index"wx:for-item="review">
+  <view class="review-item"bindtap="doctorselect"data-doctorid="{{review.doctorid}}">
+    <view><image src="{{review.userimg}}" class="userImg"></image></view>
+    <text class="review-text">评论{{doctorlist[index].name}}说:{{review.content}}\n<text class="date">{{doctordatelist[index]}}</text></text>
+    </view>
+  </block>
+  </block>
+  <block wx:if="{{length==0}}">
+    <text class="nothing">暂无评论，快发表你的评论吧</text>
+  </block>
+    </view>
+  </swiper-item>
+  <swiper-item class="item-list-group">
+   <view class="review-list">
+  <block wx:if="{{length!=0}}">
+  <block wx:for="{{articleReviewList}}" wx:key="id"wx:for-index="index" wx:for-item="review">
+  <view class="review-item"bindtap="articleselect"data-articleid="{{review.articleid}}">
+    <view><image src="{{review.userimg}}" class="userImg"></image></view>
+    <text class="review-text">评论文章《{{articlelist[index].title}}》说:{{review.content}}\n<text class="date">{{articledatelist[index]}}</text></text>
+    </view>
+  </block>
+  </block>
+  <block wx:if="{{length==0}}">
+    <text class="nothing">暂无评论，快发表你的评论吧</text>
+  </block>
+    </view>
+  </swiper-item>
+</swiper>
+
+<view class='commentInputView' style='bottom:{{height == ""?0:height}}px;' hidden='{{!isInput}}'>
+  <view  class='commentInput'>
+    <textarea class='input' maxlength='150' value="{{value}}" bindfocus="inputFocus" focus='{{focusInput}}' bindblur="inputBlur"bindinput="bind"></textarea>
+  </view>
+  <button class='send'style='font-size: 10pt !important;'type="primary"size="mini"bindtap="changeDoctorReview">评论</button>
+</view>
+
+<view class='commentInputView' style='bottom:{{height == ""?0:height}}px;' hidden='{{!isInput1}}'>
+  <view  class='commentInput'>
+    <textarea class='input' maxlength='150' value="{{value}}" bindfocus="inputFocus1" focus='{{focusInput1}}' bindblur="inputBlur1"bindinput="bind"></textarea>
+  </view>
+  <button class='send'style='font-size: 10pt !important;'type="primary"size="mini"bindtap="changeArticleReview">评论</button>
+</view>

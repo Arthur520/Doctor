@@ -1,0 +1,52 @@
+/* pages/find/find.wxss */
+Page {
+  background-color: #f1f1f1;
+}
+.swiper-tab {
+  background-color: #fff;
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+}
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 33.33%;
+  color: #797979;
+}
+.on {
+  color: #ca0c16;
+  border-bottom: 5rpx solid #ca0c16;
+}
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.item-list-group{
+  padding: 10rpx 0rpx;
+}
+.item-list-group .item-group{
+  padding: 10rpx 0;
+  border-bottom: 1px solid #D4D4D4;
+  display:flex;
+  position: relative;
+}
+.item-group .img{
+  width: 80rpx;
+  height:100rpx;
+  margin-right:20rpx;
+}
+.info-group .info{ 
+   padding: 10rpx 10rpx;
+  
+  position: absolute;
+  left:90rpx;
+  display: -webkit-box;
+   -webkit-line-clamp:2;
+   overflow: hidden;
+   -webkit-box-orient: vertical;
+   text-overflow:ellipsis;
+   word-break: break-all;
+}

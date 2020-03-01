@@ -1,0 +1,16 @@
+<!--pages/collection/collection.wxml-->
+ <view class="item-list-group">
+ <block wx:if="{{length!=0}}">
+  <block wx:for="{{articleList}}" wx:key="index" wx:for-item="article">
+    <view class="item-group" data-id="{{article.id}}" bindtap="toarticle">
+      <image src='{{article.image}}' class='img'></image>
+      <view class="info-group">     
+      <text class="info">{{article.title}}</text>
+      </view>     
+    </view>
+    </block>
+    </block>
+     <block wx:if="{{length==0}}">
+  <text class="nothing">还没有收藏任何文章</text>
+  </block>
+  </view>

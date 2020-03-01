@@ -1,0 +1,20 @@
+<!--pages/doctorlist/doctorlist.wxml-->
+ <view class="item-list-group">
+ <block wx:if="{{length!=0}}">
+  <block wx:for="{{doctorlist}}" wx:key="index" wx:for-item="doctor">
+ <view class="item-group"data-id="{{doctor.id}}"bindtap="toDoctor">
+    <image src="{{doctor.photo}}" class="doctorimg"></image>
+    <view class="info-group">
+    <view class="title">{{doctor.name}}</view>
+    <view class="faninfo">关注：{{doctor.fans}}</view>
+    <view class="dinfo">{{doctor.department}}/{{doctor.hospital}}</view>
+    </view>
+    </view>
+  </block>
+  </block>
+  <block wx:if="{{length==0}}">
+  <text class="nothing">该科室暂无医生数据</text>
+  </block>
+  </view>
+ 
+

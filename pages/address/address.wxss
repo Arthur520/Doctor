@@ -1,0 +1,59 @@
+/* pages/address/address.wxss */
+.page{
+  display: flex;
+  flex-direction: row; 
+}
+/*左侧栏主盒子*/  
+.nav_left{  
+/*设置行内块级元素（没使用定位）*/  
+display: inline-block; 
+width: 35%; 
+height: 100%; 
+background: #f5f5f5; 
+text-align: left; 
+}  
+/*左侧栏list的item*/  
+.nav_left .nav_left_items{
+   height: 80rpx;
+   line-height: 80rpx;
+   font-size: 28rpx;  
+   border-bottom: 1px solid #dedede; 
+}  
+/*左侧栏list的item被选中时*/  
+.nav_left .nav_left_items.active{
+  background: #fff; 
+  color: #f0145a; }  
+/*右侧栏主盒子*/  
+.nav_right{ 
+ display: inline-block;  
+ width: 65%; 
+ height: 100%;
+ box-sizing: border-box;
+ background: #fff; }  
+/*右侧栏list的item*/  
+.nav_right .nav_right_items{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #D4D4D4;
+  display:flex;
+}  
+.nav_right_items .info{
+  flex:1;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+} 
+.info .title{
+  display: block;
+  font-size: 28rpx; 
+  color: black;
+/*设置文字溢出部分为...*/
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+}
+.nodata_text{
+  color: black;
+  font-size: 28rpx; 
+  text-align: center;
+}

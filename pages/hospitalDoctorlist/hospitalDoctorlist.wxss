@@ -1,0 +1,32 @@
+/* pages/hospitalDoctorlist/hospitalDoctorlist.wxss */
+.item-list-group{
+  padding: 10rpx 0rpx;
+}
+.item-list-group .item-group{
+  padding: 10rpx 0;
+  border-bottom: 1px solid #D4D4D4;
+  display:flex;
+}
+.item-group .doctorimg{
+  width: 80rpx;
+  height:100rpx;
+  margin-right:20rpx;
+}
+.item-group .info-group{
+  flex:1;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.info-group .title{
+  font: 32rpx;
+}
+.info-group .dinfo{
+  font-size: 20rpx;
+  color: #0c0c0c;
+}
+.info-group .faninfo{
+  font-size: 20rpx;
+  color: #0c0c0c;
+}
+

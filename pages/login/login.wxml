@@ -1,0 +1,36 @@
+<!--pages/login/login.wxml-->
+<view>
+  <view class='headers'>
+    <image class='image' src="/image/logo.jpg"></image>
+  </view>
+  <view class="login-from">
+    <form bindsubmit='doLogin'>
+
+      <view class="line"></view>
+      <!--账号-->
+      <view class="inputView">
+        <label class="loginLabel">用户名</label>
+        <input name="username" value='' class="inputText" placeholder="请输入账号" />
+      </view>
+      <view class="line"></view>
+
+      <!--密码-->
+      <view class="inputView">
+        <label class="loginLabel">密码</label>
+        <input name="password" value='' class="inputText" password="true" placeholder="请输入密码" />
+      </view>
+      <view class="line"></view>
+
+      <!--按钮-->
+      <view class='button'>
+        <view>
+          <button class="loginBtn" form-type='submit'>登录</button>
+        </view>
+
+        <view>
+          <button class="goRegistBtn" bindtap="toRegisterPage">点击注册</button>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>

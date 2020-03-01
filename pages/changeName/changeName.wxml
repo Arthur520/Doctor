@@ -1,0 +1,8 @@
+<!--pages/changeName/changeName.wxml-->
+<view class="name-input">
+  <input class="name-text" placeholder="输入新昵称" value="" bindinput="nameInput"/>
+  <button class="changeBtn"type="primary"size="mini" bindtap="changeName">保存</button>
+ </view>
+  <view class="lineShort"></view>
+ 
+

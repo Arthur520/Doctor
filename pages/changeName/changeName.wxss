@@ -1,0 +1,19 @@
+/* pages/changeName/changeName.wxss */
+.name-input{
+  position: relative;
+  padding: 10rpx;
+  display: flex;
+}
+
+.name-input .changeBtn{
+  position: absolute;
+  right: 10rpx;
+  top:0rpx;
+}
+
+.lineShort {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(82, 224, 16);
+    margin-top: 1px;
+}

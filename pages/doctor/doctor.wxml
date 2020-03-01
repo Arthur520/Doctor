@@ -1,0 +1,84 @@
+<!--pages/doctor/doctor.wxml-->
+<view class="item-list-group">
+  <view class="item-group">
+    <image src="{{doctor.photo}}" class="doctorimg"></image>
+    <view class="info-group">
+    <view class="title">{{doctor.name}}</view>
+    <view class="dinfo">{{doctor.department}} {{doctor.position}}</view>
+    <view class="hinfo">{{doctor.hospital}}</view>
+    </view>
+    <text class="toplike">关注数：{{doctor.fans}}</text>
+  </view>
+  </view>
+  <text class="disease">擅长疾病</text>
+  <view class="button-list">
+  <button class="button"type="primary"size="mini" form-type='submit' style='font-size: 8pt !important;'>{{doctor.disease1}}</button>
+   <button class="button"type="primary"size="mini" form-type='submit'style='font-size: 8pt !important;'>{{doctor.disease2}}</button>
+    <button class="button"type="primary"size="mini" form-type='submit'style='font-size: 8pt !important;'>{{doctor.disease3}}</button>
+  </view>
+  <text>个人简介</text>
+  <view class="introduction">
+  <text class='doctorinfo'>{{doctor.introduction}}</text>
+  </view>
+
+  <text>评论列表</text>
+  <view class="review-list">
+  <block wx:if="{{length!=0}}">
+  <block wx:for="{{reviewlist}}" wx:key="id" wx:for-item="review"wx:for-index="index">
+  <view class="review-item">
+    <view><image src="{{review.userimg}}" class="userImg"></image></view>
+    <text class="review-text">{{review.content}}\n<text class="date">{{datelist[index]}}</text></text> 
+    </view>
+  </block>
+  </block>
+  <block wx:if="{{length==0}}">
+    <text class="nothing">暂无评论，快发表你的评论吧</text>
+  </block>
+    </view>
+    
+    
+  
+    
+  <view class="bottom" style="width:100%;height:35px;background-color:#f0f0f0;position:fixed; bottom:0;">
+    <block wx:if="{{userInfo != null}}">
+    <view class="picText"bindtap="like">
+    <image class="like" src="{{like}}"></image>
+    <text class="pictitle">关注</text>
+    </view>
+    </block>
+    <block wx:if="{{userInfo == null}}">
+    <view class="picText"bindtap="goLogin">
+    <image class="like" src="/image/cancelCollection.png"></image>
+    <text class="pictitle">关注</text>
+    </view>
+    </block>
+    <block wx:if="{{userInfo != null}}">
+    <view class="picText" bindtap='focusButn'>
+      <image class="review" src="/image/review.png"></image>
+      <text class="pictitle">评论</text>
+    </view>
+    </block>
+    <block wx:if="{{userInfo == null}}">
+    <view class="picText" bindtap='goLogin'>
+      <image class="review" src="/image/review.png"></image>
+      <text class="pictitle">评论</text>
+    </view>
+    </block>
+ <view class="picText">
+<button open-type='share' size="mini" class="share" style="background-image:url(/image/share.png);" plain='true'></button>
+ <text class="pictitle">分享</text>
+ </view>
+</view>
+
+<view class='commentInputView' style='bottom:{{height == ""?0:height}}px;' hidden='{{!isInput}}'>
+  <view  class='commentInput'>
+    <textarea class='input' maxlength='150' value="{{value}}" bindfocus="inputFocus" focus='{{focusInput}}' bindblur="inputBlur"bindinput="bind"></textarea>
+  </view>
+  <button class='send'style='font-size: 10pt !important;'type="primary"size="mini"bindtap="addDoctorReview">评论</button>
+</view>
+
+
+
+
+
+  

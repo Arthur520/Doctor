@@ -1,0 +1,59 @@
+<!--pages/article/article.wxml-->
+<view class="content">
+    <!-- 标题内容 -->
+     <text class="title">{{article.title}}</text>
+     <image class="image" src="{{article.image}}"></image>
+     <text class="article-content">{{article.passage}}</text>
+</view>
+
+    <text>评论列表</text>
+  <view class="review-list">
+  <block wx:if="{{length!=0}}">
+  <block wx:for="{{reviewlist}}" wx:key="id" wx:for-item="review"wx:for-index="index">
+  <view class="review-item">
+    <view><image src="{{review.userimg}}" class="userImg"></image></view>
+    <text class="review-text">{{review.content}}\n<text class="date">{{datelist[index]}}</text></text>
+    </view>
+  </block>
+  </block>
+  <block wx:if="{{length==0}}">
+    <text class="nothing">暂无评论，快发表你的评论吧</text>
+  </block>
+    </view>
+
+    <view class="bottom" style="width:100%;height:35px;background-color:#f0f0f0;position:fixed; bottom:0;"> 
+<block wx:if="{{userInfo != null}}">
+  <view class="picText"bindtap="like">
+  <image class="like" src="{{like}}"></image>
+  <text class="pictitle">收藏</text>
+  </view>
+</block>
+<block wx:if="{{userInfo == null}}">
+  <view class="picText"bindtap="goLogin">
+  <image class="like" src="/image/cancelCollection.png"></image>
+  <text class="pictitle">收藏</text>
+  </view>
+</block>
+<block wx:if="{{userInfo != null}}">
+ <view class="picText"bindtap='focusButn'>
+ <image class="review" src="/image/review.png" ></image>
+ <text class="pictitle">评论</text>
+ </view>
+ </block>
+ <block wx:if="{{userInfo == null}}">
+  <view class="picText"bindtap='goLogin'>
+ <image class="review" src="/image/review.png" ></image>
+ <text class="pictitle">评论</text>
+ </view>
+</block>
+ <view class="picText">
+ <image class="share" src="/image/share.png"></image>
+ <text class="pictitle">分享</text>
+ </view>
+</view>
+<view class='commentInputView' style='bottom:{{height == ""?0:height}}px;' hidden='{{!isInput}}'>
+  <view  class='commentInput'>
+    <textarea class='input' maxlength='150' value="{{value}}" bindfocus="inputFocus" focus='{{focusInput}}' bindblur="inputBlur"bindinput="bind"></textarea>
+  </view>
+  <button class='send'style='font-size: 10pt !important;'type="primary"size="mini"bindtap="addArticleReview">评论</button>
+</view>

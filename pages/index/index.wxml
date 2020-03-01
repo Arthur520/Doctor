@@ -1,0 +1,73 @@
+<!--pages/index/index.wxml-->
+<!-- 轮播图 ------------------------------------- -->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}"current="{{swiperCurrent}}" bindchange="swiperChange">
+  <block wx:for="{{indexDoctorList}}" wx:key="id"wx:for-item="doctor_index">
+    <swiper-item>
+      <image src="{{doctor_index.cover}}" class="slide-image"data-id="{{doctor_index.doctorid}}"bindtap="swiperClick" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 顶部搜索栏 -->
+	<view class="search">
+        <view class="scan">
+        </view>
+        <view class="search-input">
+            <image class="search-icon" src="/image/search.png" mode="aspectFit"/>
+            <input class="serach-text" placeholder="搜索医生、医院、科室、疾病" value="{{search}}" bindinput="searchInput"/>
+            <button class="searchBtn"type="primary"size="mini" form-type='submit'bindtap="searchBtn">搜索</button>
+        </view>
+        <view class="scan">
+        </view>
+  </view>
+     <view class="home_grids">
+  <block wx:for="{{griddata}}" wx:key="name">
+   <navigator url="{{item.url}}" class='home_grid'>
+    <image src="{{item.img}}" class="home_icon"></image>
+    <view class="home_grid_text">{{item.name}}</view>
+   </navigator>
+  </block>
+ </view>
+ <text class="popular">推荐医生</text>
+ <view class="item-list-group">
+  <block wx:for="{{doctorlist}}" wx:key="id" wx:for-item="doctor">
+ <view class="item-group"data-id="{{doctor.id}}"bindtap="toDoctor">
+    <image src="{{doctor.photo}}" class="doctorimg"></image>
+    <view class="info-group">
+    <view class="title">{{doctor.name}}</view>
+    <view class="faninfo">关注：{{doctor.fans}}</view>
+    <view class="dinfo">{{doctor.department}}/{{doctor.hospital}}</view>
+    </view>
+    </view>
+  </block>
+  </view>
+    <view class="hospital">
+    <text class="popular">医院列表</text>
+    <view class="select" bindtap="selectHospital">
+    <text class="address">{{address}}</text>
+    <image src="/image/downmore.png" class="downmore"></image>
+    </view>
+    </view>
+    <view class="item-list-group">
+    <block wx:if="{{length!=0}}">
+     <block wx:for="{{hospitallist}}" wx:key="id" wx:for-item="hospital">
+  <view class="item-group"data-id="{{hospital.id}}"bindtap="toHospital">
+    <image src="{{hospital.picture}}" class="doctorimg"></image>
+    <view class="info-group">
+    <view class="title">{{hospital.name}}</view>
+    <view class="faninfo">{{hospital.level}}</view>
+    <view class="dinfo">{{hospital.address}}</view>
+    </view>
+    </view>
+    </block>
+    </block>
+    <block wx:if="{{length==0}}">
+    <text class="nothing">该地区暂无医院数据</text>
+    </block>
+    </view>
+    
+
+    
+
+
+
