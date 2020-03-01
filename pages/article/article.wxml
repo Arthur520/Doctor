@@ -20,6 +20,9 @@
     <text class="nothing">暂无评论，快发表你的评论吧</text>
   </block>
     </view>
+    <view class="section bottom-line">
+		<text>到底啦</text>
+	</view>
 
     <view class="bottom" style="width:100%;height:35px;background-color:#f0f0f0;position:fixed; bottom:0;"> 
 <block wx:if="{{userInfo != null}}">
@@ -47,7 +50,7 @@
  </view>
 </block>
  <view class="picText">
- <image class="share" src="/image/share.png"></image>
+ <button open-type='share' size="mini" class="share" style="background-image:url(/image/share.png);" plain='true'></button>
  <text class="pictitle">分享</text>
  </view>
 </view>

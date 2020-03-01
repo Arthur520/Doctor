@@ -118,8 +118,8 @@ swiper {
 }
 .address{
  position: absolute;
- top:15rpx;
- left:220rpx;
+ top:16rpx;
+ left:215rpx;
 }
 .downmore{
   width: 40rpx;

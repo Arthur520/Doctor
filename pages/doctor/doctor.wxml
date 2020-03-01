@@ -35,7 +35,9 @@
     <text class="nothing">暂无评论，快发表你的评论吧</text>
   </block>
     </view>
-    
+    <view class="section bottom-line">
+		<text>到底啦</text>
+	</view>
     
   
     
@@ -69,6 +71,7 @@
  <text class="pictitle">分享</text>
  </view>
 </view>
+
 
 <view class='commentInputView' style='bottom:{{height == ""?0:height}}px;' hidden='{{!isInput}}'>
   <view  class='commentInput'>
