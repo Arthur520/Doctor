@@ -335,7 +335,8 @@ Page({
     })
   },
   isDetail: function (e) {
-    var hospitalId=this.data.hospitalId;
+    var that=this;
+    var hospitalId=that.data.hospitalId;
     wx.navigateTo({
       url: "/pages/hospitalDoctorlist/hospitalDoctorlist?id=" + hospitalId + "&department=" + e.currentTarget.dataset.department
     })

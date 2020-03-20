@@ -320,7 +320,7 @@ Page({
         url: serverUrl + '/doctor/query',
         method: "POST",
         data: {
-          id: that.data.doctor.id,
+          id: that.data.doctorId,
         },
         header: {
           'content-type': 'application/json'

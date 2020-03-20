@@ -25,7 +25,6 @@ Page({
     var that = this;
     const department = options.department;
     const id=options.id;
-    console.log(department);
     wx.request({
       url: serverUrl + '/hospital/department',
       method: "POST",
