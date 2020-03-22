@@ -2,11 +2,31 @@
 Page {
   background-color: #f1f1f1;
 }
+.downmore{
+  width: 40rpx;
+  height:30rpx;
+  position: absolute;
+  top:28rpx;
+  left: 200rpx;
+}
+.select_one {
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: 1px solid #ccc;
+    
+}
+.box{
+    width: 33.33%;
+    position: absolute;
+    z-index: 1;
+    background-color:#f1f1f1; 
+}
 .swiper-tab {
   background-color: #fff;
   width: 100%;
   text-align: center;
   line-height: 80rpx;
+  position: relative;
 }
 .swiper-tab-list {
   font-size: 30rpx;
@@ -25,28 +45,29 @@ Page {
   overflow: hidden;
 }
 .item-list-group{
-  padding: 10rpx 0rpx;
+  display: flex;
+  flex-direction: column;
 }
 .item-list-group .item-group{
   padding: 10rpx 0;
   border-bottom: 1px solid #D4D4D4;
   display:flex;
+  flex-direction: row;
   position: relative;
 }
-.item-group .img{
+.img{
   width: 80rpx;
   height:100rpx;
-  margin-right:20rpx;
 }
-.info-group .info{ 
-   padding: 10rpx 10rpx;
-  
+.info{ 
+  font-size: 32rpx;
+  word-break: break-all;
+  margin-left:20rpx;
+}
+.date{
+  font-size: 21rpx;
+  word-break: break-all;
   position: absolute;
-  left:90rpx;
-  display: -webkit-box;
-   -webkit-line-clamp:2;
-   overflow: hidden;
-   -webkit-box-orient: vertical;
-   text-overflow:ellipsis;
-   word-break: break-all;
+  bottom:0;
+  right:0;
 }
