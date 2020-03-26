@@ -74,7 +74,7 @@ Page({
   onLoad: function (options) {
     var serverUrl = app.globalData.serverUrl;
     var that = this;
-    const address = app.globalData.address;
+    const complete_address = app.globalData.complete_address;
     wx.request({
       url: serverUrl + '/doctor/homedoctor',
       method: "GET",
@@ -106,7 +106,7 @@ Page({
       url: serverUrl + '/hospital/address',
       method: "POST",
       data: {
-        address: address
+        address: complete_address
       },
       header: {
         'content-type': 'application/json'

@@ -14,7 +14,7 @@
   <!--如果有数据，才遍历项-->
     <view wx:if="{{cateItems[curIndex].ishaveChild}}">
       <block wx:for="{{cateItems[curIndex].children}}" wx:key="unique">
-        <view class="nav_right_items" data-address="{{item.name}}" bindtap="address">    
+        <view class="nav_right_items" data-top="{{cateItems[curIndex].cate_name}}"data-address="{{item.name}}" bindtap="address">    
           <view class="info">
           <view class="title">{{item.name}}</view>
           </view>
