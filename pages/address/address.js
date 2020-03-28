@@ -73,10 +73,7 @@ Page({
               child_id: 15,
               name: '延庆'
             },
-            {
-              child_id: 16,
-              name: '其他'
-            },
+            
           ]
       },
       {
@@ -137,10 +134,7 @@ Page({
               child_id: 13,
               name: '连云港'
             },
-            {
-              child_id: 14,
-              name: '其他'
-            },
+           
           ]
       },
       {
@@ -197,10 +191,7 @@ Page({
               child_id: 12,
               name: '七台河'
             },
-            {
-              child_id: 13,
-              name: '其他'
-            },
+           
           ]
       },
       {
@@ -249,10 +240,7 @@ Page({
               child_id: 10,
               name: '延安'
             },
-            {
-              child_id: 11,
-              name: '其他'
-            },
+            
             
           ]
       },
@@ -330,10 +318,7 @@ Page({
               child_id: 17,
               name: '闸北'
             },
-            {
-              child_id: 18,
-              name: '其他'
-            },
+           
             
           ]
       },
@@ -415,10 +400,7 @@ Page({
               child_id: 18,
               name: '济源'
             },
-            {
-              child_id: 19,
-              name: '其他'
-            },
+            
         
           ]
       },
@@ -516,11 +498,7 @@ Page({
               child_id: 22,
               name: '云浮'
             },
-            {
-              child_id: 23,
-              name: '其他'
-            },
-
+           
           ]
       },
       {
@@ -585,10 +563,7 @@ Page({
               child_id: 14,
               name: '来宾'
             },
-            {
-              child_id: 15,
-              name: '其他'
-            },
+           
 
           ]
       },
@@ -642,10 +617,7 @@ Page({
               child_id: 11,
               name: '舟山'
             },
-            {
-              child_id: 12,
-              name: '其他'
-            },
+            
            
 
           ]
@@ -724,10 +696,7 @@ Page({
               child_id: 17,
               name: '宿州'
             },
-            {
-              child_id: 18,
-              name: '其他'
-            },
+           
             
 
           ]
@@ -782,10 +751,7 @@ Page({
               child_id: 11,
               name: '鹰潭'
             },
-            {
-              child_id: 12,
-              name: '其他'
-            },
+            
             
 
           ]
@@ -832,10 +798,7 @@ Page({
               child_id: 9,
               name: '漳州'
             },
-            {
-              child_id: 10,
-              name: '其他'
-            },
+            
             
 
 
@@ -915,10 +878,7 @@ Page({
               child_id: 17,
               name: '莱芜'
             },
-            {
-              child_id: 18,
-              name: '其他'
-            },
+            
 
 
           ]
@@ -973,10 +933,7 @@ Page({
               child_id: 11,
               name: '朔州'
             },
-            {
-              child_id: 12,
-              name: '其他'
-            },
+            
             
 
           ]
@@ -1031,10 +988,7 @@ Page({
               child_id: 11,
               name: '衡水'
             },
-            {
-              child_id: 12,
-              name: '其他'
-            },
+            
 
 
           ]
@@ -1105,10 +1059,7 @@ Page({
               child_id: 15,
               name: '滨海新区'
             },
-            {
-              child_id: 16,
-              name: '其他'
-            },
+            
 
 
           ]
@@ -1175,10 +1126,7 @@ Page({
               child_id: 14,
               name: '盘锦'
             },
-            {
-              child_id: 15,
-              name: '其他'
-            },
+            
             
 
 
@@ -1226,10 +1174,7 @@ Page({
               child_id: 9,
               name: '白山'
             },
-            {
-              child_id: 10,
-              name: '其他'
-            },
+            
             
 
 
@@ -1301,10 +1246,7 @@ Page({
               child_id: 15,
               name: '潜江'
             },
-            {
-              child_id: 16,
-              name: '其他'
-            },
+            
 
 
           ]
@@ -1371,10 +1313,7 @@ Page({
               child_id: 14,
               name: '湘西'
             },
-            {
-              child_id: 15,
-              name: '其他'
-            },
+            
 
 
           ]
@@ -1461,10 +1400,7 @@ Page({
               child_id: 19,
               name: '广安'
             },
-            {
-              child_id: 20,
-              name: '其他'
-            },
+            
 
 
           ]
@@ -1547,10 +1483,7 @@ Page({
               child_id: 18,
               name: '綦江县'
             },
-            {
-              child_id: 19,
-              name: '其他'
-            },
+            
 
 
           ]
@@ -1613,10 +1546,7 @@ Page({
               child_id: 13,
               name: '金昌'
             },
-            {
-              child_id: 14,
-              name: '其他'
-            },
+            
             
           ]
       },
@@ -1686,10 +1616,7 @@ Page({
               child_id: 15,
               name: '德宏'
             },
-            {
-              child_id: 16,
-              name: '其他'
-            },
+            
 
           ]
       },
@@ -1755,10 +1682,7 @@ Page({
               child_id: 14,
               name: '阿勒泰'
             },
-            {
-              child_id: 15,
-              name: '其他'
-            },
+            
             
           ]
       },
@@ -1816,10 +1740,7 @@ Page({
               child_id: 12,
               name: '锡林郭勒盟'
             },
-            {
-              child_id: 13,
-              name: '其他'
-            },
+            
             
           ]
       },
@@ -1833,10 +1754,7 @@ Page({
               child_id: 1,
               name: '海口'
             },
-            {
-              child_id: 2,
-              name: '其他'
-            },
+            
            
           ]
       },
@@ -1882,10 +1800,7 @@ Page({
               child_id: 9,
               name: '安顺'
             },
-            {
-              child_id: 10,
-              name: '其他'
-            },
+            
           
 
           ]
@@ -1908,10 +1823,7 @@ Page({
               child_id: 3,
               name: '海东'
             },
-            {
-              child_id: 4,
-              name: '其他'
-            },
+            
            
 
           ]
@@ -1942,10 +1854,7 @@ Page({
               child_id: 5,
               name: '固原'
             },
-            {
-              child_id: 6,
-              name: '其他'
-            },
+            
            
 
           ]
@@ -1976,10 +1885,7 @@ Page({
               child_id: 5,
               name: '日喀则'
             },
-            {
-              child_id: 6,
-              name: '其他'
-            },
+            
            
           ]
       },

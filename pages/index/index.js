@@ -7,11 +7,11 @@ Page({
    */
   data: {
     griddata:[
-      { name: "消化内科", img: "/image/department1.png", url: "/pages/doctorlist/doctorlist?department=消化内科"},
+      { name: "消化内科", img: "/image/department1.png", url: "/pages/doctorlist/doctorlist?department=消化内科/消化科/脾胃//胃肠/肠胃"},
       { name: "神经内科", img: "/image/department2.png", url: "/pages/doctorlist/doctorlist?department=神经内科"},
-      { name: "儿科", img: "/image/department3.png", url: "/pages/doctorlist/doctorlist?department=儿科" },
-      { name: "耳鼻喉科", img: "/image/department4.png", url: "/pages/doctorlist/doctorlist?department=耳鼻喉科"},
-      { name: "妇产科", img: "/image/department5.png", url: "/pages/doctorlist/doctorlist?department=妇产科"},
+      { name: "儿科", img: "/image/department3.png", url: "/pages/doctorlist/doctorlist?department=儿" },
+      { name: "耳鼻喉科", img: "/image/department4.png", url: "/pages/doctorlist/doctorlist?department=耳鼻/五官"},
+      { name: "妇产科", img: "/image/department5.png", url: "/pages/doctorlist/doctorlist?department=妇科/产科/妇女"},
       { name: "更多", img: "/image/department6.png", url: "/pages/more/more" },
     ],
     indicatorDots: true, // 是否显示面板指示点
@@ -75,31 +75,8 @@ Page({
     var serverUrl = app.globalData.serverUrl;
     var that = this;
     const complete_address = app.globalData.complete_address;
-    wx.request({
-      url: serverUrl + '/doctor/homedoctor',
-      method: "GET",
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        var data = res.data;
-        console.log(res);
-        var list = data.data; 
-        console.log(list);
-        if (data.status == 200) {
-          that.setData({
-            doctorlist: list,
-            address:app.globalData.address
-          });
-        } else {
-          // 失败弹出框
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
-            duration: 3000
-          })
-        }
-      }
+    that.setData({
+      address: app.globalData.address
     })
 
     wx.request({

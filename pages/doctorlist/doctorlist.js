@@ -30,6 +30,7 @@ Page({
       method: "POST",
       data: {
         department: department,
+        address:app.globalData.complete_address
       },
       header: {
         'content-type': 'application/json'

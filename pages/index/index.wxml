@@ -9,16 +9,14 @@
   </block>
 </swiper>
 <!-- 顶部搜索栏 -->
-	<view class="search">
-        <view class="scan">
-        </view>
-        <view class="search-input">
-            <image class="search-icon" src="/image/search.png" mode="aspectFit"/>
+	<view class="search">     
+    <text bindtap="selectHospital" class="address">{{address}}</text>
+    <image bindtap="selectHospital"src="/image/downmore.png" class="downmore"></image> 
+        <view class="search-input">    
+          <image class="search-icon" src="/image/search.png" mode="aspectFit"/>
             <input class="serach-text" placeholder="搜索医生、医院、科室、疾病" value="{{search}}" bindinput="searchInput"/>
             <button class="searchBtn"type="primary"size="mini" form-type='submit'bindtap="searchBtn">搜索</button>
-        </view>
-        <view class="scan">
-        </view>
+        </view>        
   </view>
      <view class="home_grids">
   <block wx:for="{{griddata}}" wx:key="name">
@@ -28,25 +26,8 @@
    </navigator>
   </block>
  </view>
- <text class="popular">推荐医生</text>
- <view class="item-list-group">
-  <block wx:for="{{doctorlist}}" wx:key="id" wx:for-item="doctor">
- <view class="item-group"data-id="{{doctor.id}}"bindtap="toDoctor">
-    <image src="{{doctor.photo}}" class="doctorimg"></image>
-    <view class="info-group">
-    <view class="title">{{doctor.name}}</view>
-    <view class="faninfo">关注：{{doctor.fans}}</view>
-    <view class="dinfo">{{doctor.department}}/{{doctor.hospital}}</view>
-    </view>
-    </view>
-  </block>
-  </view>
     <view class="hospital">
     <text class="popular">医院列表</text>
-    <view class="select" bindtap="selectHospital">
-    <text class="address">{{address}}</text>
-    <image src="/image/downmore.png" class="downmore"></image>
-    </view>
     </view>
     <view class="item-list-group">
     <block wx:if="{{length!=0}}">

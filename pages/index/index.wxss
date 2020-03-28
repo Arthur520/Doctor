@@ -8,20 +8,16 @@ swiper {
   display: block;  
 }
 .search{
-     padding :20rpx 0;
+     padding :20rpx 2rpx;
 	display: flex;
   	flex-direction: row;
   	height: 50rpx;
 	align-items: center;
   background: #088d5a;
+  
 }
 
-.search .scan{
-	display: flex;
-  	flex-direction: column;
-	align-items: center;
-	width: 10%;
-}
+
 
 .search .search-input{
 	padding: 5rpx;
@@ -29,13 +25,14 @@ swiper {
 	display: flex;
 	flex-direction: row;
 	height: 100%;
-	width: 400%;
 	-moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius:5px;
 	align-items: center;
+  flex: 1;
   position: relative;
 }
+
 .search-input .searchBtn{
   display: flex;
   position: absolute;
@@ -117,14 +114,10 @@ swiper {
   position: relative;
 }
 .address{
- position: absolute;
- top:16rpx;
- left:215rpx;
+  font-size: 30rpx;
 }
 .downmore{
   width: 40rpx;
   height:30rpx;
-  position: absolute;
-  top:24rpx;
-  left: 280rpx;
+  
 }

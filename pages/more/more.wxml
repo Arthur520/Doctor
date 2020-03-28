@@ -14,7 +14,7 @@
   <!--如果有数据，才遍历项-->
     <view wx:if="{{cateItems[curIndex].ishaveChild}}">
       <block wx:for="{{cateItems[curIndex].children}}" wx:key="unique">
-        <view class="nav_right_items" data-department="{{item.name}}" bindtap="isDetail">    
+        <view class="nav_right_items" data-department="{{item.search}}" bindtap="isDetail">    
           <view class="info">
           <view class="title">{{item.name}}</view>
           <image src="/image/right.png" class="img"></image>

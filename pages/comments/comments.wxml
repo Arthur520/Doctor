@@ -10,7 +10,7 @@
   <block wx:for="{{doctorReviewList}}" wx:key="id" wx:for-index="index"wx:for-item="review">
   <view class="review-item"bindtap="doctorselect"data-doctorid="{{review.doctorid}}">
     <view><image src="{{review.userimg}}" class="userImg"></image></view>
-    <text class="review-text">评论{{doctorlist[index].name}}说:{{review.content}}\n<text class="date">{{doctordatelist[index]}}</text></text>
+    <text class="review-text">评论{{doctorlist[index].name}}医生:{{review.content}}\n<text class="date">{{doctordatelist[index]}}</text></text>
     </view>
   </block>
   </block>
@@ -25,7 +25,7 @@
   <block wx:for="{{articleReviewList}}" wx:key="id"wx:for-index="index" wx:for-item="review">
   <view class="review-item"bindtap="articleselect"data-articleid="{{review.articleid}}">
     <view><image src="{{review.userimg}}" class="userImg"></image></view>
-    <text class="review-text">评论文章《{{articlelist[index].title}}》说:{{review.content}}\n<text class="date">{{articledatelist[index]}}</text></text>
+    <text class="review-text">评论《{{articlelist[index].title}}》:{{review.content}}\n<text class="date">{{articledatelist[index]}}</text></text>
     </view>
   </block>
   </block>
