@@ -121,3 +121,20 @@ swiper {
   height:30rpx;
   
 }
+
+.swiper-tab {
+  background-color: #088d5a;
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+}
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 25%;
+  color: #ffffff;
+}
+.on {
+  color: #000000;
+  border-bottom: 5rpx solid #000000;
+}

@@ -211,7 +211,8 @@ Page({
         console.log(doctor);
         if (data.status == 200) {
           that.setData({
-            doctor: doctor
+            doctor: doctor,
+            diseaselist:doctor.disease.split("/")
           });
         } else {
           // 失败弹出框

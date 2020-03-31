@@ -133,7 +133,7 @@ Page({
             {
               child_id: 9,
               name: '骨科',
-              search: '骨科/关节'
+              search: '骨科/关节/骨病'
             },
             {
               child_id: 10,
@@ -330,7 +330,6 @@ Page({
     })
   },
   isDetail: function (e) {
-    console.log(e.currentTarget.dataset.department);
     wx.navigateTo({
       url: "/pages/doctorlist/doctorlist?department=" + e.currentTarget.dataset.department
     })

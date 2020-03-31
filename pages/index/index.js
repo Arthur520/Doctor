@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currentTab: 0,
     griddata:[
       { name: "消化内科", img: "/image/department1.png", url: "/pages/doctorlist/doctorlist?department=消化内科/消化科/脾胃//胃肠/肠胃"},
       { name: "神经内科", img: "/image/department2.png", url: "/pages/doctorlist/doctorlist?department=神经内科"},
@@ -23,6 +24,7 @@ Page({
     hospitallist:null,
     indexDoctorList:null,
     length:0,
+    choiceText:"医生姓名",
     address:null
   },  
   //轮播图切换事件
@@ -50,7 +52,7 @@ Page({
   },
   searchBtn:function(e){
     wx.navigateTo({
-      url: '/pages/search/search?search='+this.data.search,
+      url: '/pages/search/search?search=' + this.data.search + "&choice=" + this.data.currentTab,
     })
   },
   toDoctor:function(e){
@@ -135,6 +137,36 @@ Page({
       }
     })
     wx.hideLoading();
+  },
+  swichNav: function (e) {
+    var that = this;
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      if (e.target.dataset.current==0){
+      that.setData({
+        currentTab: e.target.dataset.current,
+        choiceText:"医生姓名"
+      })}
+      else if (e.target.dataset.current == 1) {
+        that.setData({
+          currentTab: e.target.dataset.current,
+          choiceText: "医院名称"
+        })
+      }
+      else if (e.target.dataset.current == 2) {
+        that.setData({
+          currentTab: e.target.dataset.current,
+          choiceText: "科室名称"
+        })
+      }
+      else {
+        that.setData({
+          currentTab: e.target.dataset.current,
+          choiceText: "疾病名称"
+        })
+      }
+    }
   },
 
   /**

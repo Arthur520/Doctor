@@ -10,18 +10,18 @@
     <text class="toplike">关注数：{{doctor.fans}}</text>
   </view>
   </view>
-  <text class="disease">擅长疾病</text>
+  <text class="big">擅长疾病</text>
   <view class="button-list">
-  <button class="button"type="primary"size="mini" form-type='submit' style='font-size: 8pt !important;'>{{doctor.disease1}}</button>
-   <button class="button"type="primary"size="mini" form-type='submit'style='font-size: 8pt !important;'>{{doctor.disease2}}</button>
-    <button class="button"type="primary"size="mini" form-type='submit'style='font-size: 8pt !important;'>{{doctor.disease3}}</button>
+  <block wx:for="{{diseaselist}}" wx:key="*this"wx:for-item="disease"wx:for-index="index">
+  <button class="button"type="primary"size="mini" form-type='submit' style='font-size: 8pt !important;'>{{disease}}</button>
+  </block>
   </view>
-  <text>个人简介</text>
+  <text class="big">个人简介</text>
   <view class="introduction">
   <text class='doctorinfo'>{{doctor.introduction}}</text>
   </view>
 
-  <text>评论列表</text>
+  <text class="big">评论列表</text>
   <view class="review-list">
   <block wx:if="{{length!=0}}">
   <block wx:for="{{reviewlist}}" wx:key="id" wx:for-item="review"wx:for-index="index">

@@ -32,7 +32,9 @@
   line-height: 40rpx;
   letter-spacing: 2rpx;
 }
-
+.big{
+  color: #08b308;
+}
 .article-text{
   vertical-align: middle;
 }

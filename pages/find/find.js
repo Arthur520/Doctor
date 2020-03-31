@@ -25,7 +25,7 @@ Page({
     this.setData({
       department1: name
     })
-    this.onShow();
+    this.change1();
     console.log(this.data.department1)
   },
   mySelect2(e) {
@@ -33,7 +33,7 @@ Page({
     this.setData({
       department2: name
     })
-    this.onShow();
+    this.change2();
     console.log(this.data.department2)
   },
   mySelect3(e) {
@@ -41,7 +41,7 @@ Page({
     this.setData({
       department3: name
     })
-    this.onShow();
+    this.change3();
     console.log(this.data.department3)
   },
   bindChange: function (e) {
@@ -98,33 +98,128 @@ Page({
       url: '/pages/article/article?id=' + e.currentTarget.dataset.id
     })
   },
+  change1: function () {
+    var serverUrl = app.globalData.serverUrl;
+    var that = this;
+    wx.request({
+      url: serverUrl + '/article/changefirsttype',
+      method: "POST",
+      data: {
+        type: that.data.department1,
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        var data = res.data;
+        console.log(res);
+        var list = data.data;
+        console.log(list);
+        if (data.status == 200) {
+          that.setData({
+            firstArticleList: list
+          });
+          var datelist1 = new Array();
+          for (var i = 0; i < list.length; i++) {
+            datelist1[i] = timer.js_date_another_time(that.data.firstArticleList[i].date);
+          }
+          that.setData({
+            datelist1: datelist1
+          })
+        } else {
+          // 失败弹出框
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+        }
+      }
+    })
+  },
+  change2: function () {
+    var serverUrl = app.globalData.serverUrl;
+    var that = this;
+    wx.request({
+      url: serverUrl + '/article/changesecondtype',
+      method: "POST",
+      data: {
+        type: that.data.department2,
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        var data = res.data;
+        console.log(res);
+        var list = data.data;
+        console.log(list);
+        if (data.status == 200) {
+          that.setData({
+            secondArticleList: list
+          });
+          var datelist2 = new Array();
+          for (var i = 0; i < list.length; i++) {
+            datelist2[i] = timer.js_date_another_time(that.data.secondArticleList[i].date);
+          }
+          that.setData({
+            datelist2: datelist2
+          })
+        } else {
+          // 失败弹出框
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+        }
+      }
+    })
+  },
+  change3: function () {
+    var serverUrl = app.globalData.serverUrl;
+    var that = this;
+    wx.request({
+      url: serverUrl + '/article/changethirdtype',
+      method: "POST",
+      data: {
+        type: that.data.department3,
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        var data = res.data;
+        console.log(res);
+        var list = data.data;
+        console.log(list);
+        if (data.status == 200) {
+          that.setData({
+            thirdArticleList: list
+          });
+          var datelist3 = new Array();
+          for (var i = 0; i < list.length; i++) {
+            datelist3[i] = timer.js_date_another_time(that.data.thirdArticleList[i].date);
+          }
+          that.setData({
+            datelist3: datelist3
+          })
+        } else {
+          // 失败弹出框
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+        }
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          winWidth: res.windowWidth,
-          winHeight: res.windowHeight
-        });
-      }
-    });
-  },
-  
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
     var serverUrl = app.globalData.serverUrl;
     var that = this;
     wx.request({
@@ -182,7 +277,7 @@ Page({
           });
           var datelist2 = new Array();
           for (var i = 0; i < list.length; i++) {
-            datelist2[i] = timer.js_date_another_time(that.data.secondArticleList[i].date);
+          datelist2[i] = timer.js_date_another_time(that.data.secondArticleList[i].date);
           }
           that.setData({
             datelist2: datelist2
@@ -232,6 +327,29 @@ Page({
         }
       }
     })
+  },
+  
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          winWidth: res.windowWidth,
+          winHeight: res.windowHeight
+        });
+      }
+    });
+  },
+  
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    
   },
 
   /**

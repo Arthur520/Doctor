@@ -13,8 +13,8 @@
 .item-group .toplike{
   font-size: 26rpx;
   position: absolute;
-  right:200rpx;
-  bottom: 10rpx;
+  right:10rpx;
+  top: 68rpx;
 }
 .item-group .info-group{
   flex:1;
@@ -57,6 +57,9 @@
   font-size: 26rpx;
   text-align:justify;
   text-align-last:left;
+}
+.big{
+  color: #08b308;
 }
 .review-list{
   display: flex;

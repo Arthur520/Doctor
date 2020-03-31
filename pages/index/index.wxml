@@ -9,12 +9,18 @@
   </block>
 </swiper>
 <!-- 顶部搜索栏 -->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">医生</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">医院</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">科室</view>
+  <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">疾病</view>
+</view> 
 	<view class="search">     
     <text bindtap="selectHospital" class="address">{{address}}</text>
     <image bindtap="selectHospital"src="/image/downmore.png" class="downmore"></image> 
         <view class="search-input">    
           <image class="search-icon" src="/image/search.png" mode="aspectFit"/>
-            <input class="serach-text" placeholder="搜索医生、医院、科室、疾病" value="{{search}}" bindinput="searchInput"/>
+            <input class="serach-text" placeholder="搜索{{choiceText}}" value="{{search}}" bindinput="searchInput"/>
             <button class="searchBtn"type="primary"size="mini" form-type='submit'bindtap="searchBtn">搜索</button>
         </view>        
   </view>

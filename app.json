@@ -16,8 +16,7 @@
     "pages/more/more",
     "pages/hospital/hospital",
     "pages/address/address",
-    "pages/hospitalDoctorlist/hospitalDoctorlist",
-    "pages/search/search"
+    "pages/hospitalDoctorlist/hospitalDoctorlist"
   ],
   "window": {
     "backgroundTextStyle": "light",

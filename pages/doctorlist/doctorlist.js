@@ -24,7 +24,6 @@ Page({
     var serverUrl = app.globalData.serverUrl;
     var that = this;
     const department=options.department;
-    console.log(department);
     wx.request({
       url: serverUrl + '/doctor/department',
       method: "POST",
