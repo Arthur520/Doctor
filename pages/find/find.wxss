@@ -26,7 +26,7 @@ text-align: left;
 .box{
     width: 33.33%;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     background-color:#f1f1f1; 
 }
 .swiper-tab {
@@ -54,7 +54,8 @@ text-align: left;
   	height: 50rpx;
 	align-items: center;
   background: #0788c4;
-  
+  position: relative;
+  z-index: 1;
 }
 
 
