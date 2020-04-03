@@ -24,6 +24,9 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.article{
+   color: #053dd8;
+}
 .article-content{
   color: #666;
   font-size: 28rpx;
@@ -31,6 +34,8 @@
   margin-left: 30rpx;
   line-height: 40rpx;
   letter-spacing: 2rpx;
+  text-overflow:ellipsis;
+  word-wrap:break-word;
 }
 .big{
   color: #08b308;
@@ -147,4 +152,39 @@
 .bottom-line text{
   font-size: 10pt;
   color: #666;
+}
+.item-list-group .item-group{
+  padding: 10rpx 0;
+  border-bottom: 1px solid #D4D4D4;
+  display:flex;
+  position: relative;
+}
+.item-group .doctorimg{
+  width:136rpx;
+  height:136rpx;
+  margin-right:20rpx;
+}
+.item-group .toplike{
+  font-size: 26rpx;
+  position: absolute;
+  right:10rpx;
+  top: 68rpx;
+}
+.item-group .info-group{
+  flex:1;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.info-group .title1{
+  font: 32rpx;
+  color: #08b308;
+}
+.info-group .dinfo{
+  font-size: 26rpx;
+  color: #0c0c0c;
+}
+.info-group .hinfo{
+  font-size: 26rpx;
+  color: #0c0c0c;
 }

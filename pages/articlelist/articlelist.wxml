@@ -1,0 +1,14 @@
+<!--pages/articlelist/articlelist.wxml-->
+<view class="item-list-group">
+<block wx:if="{{articlelength!=0}}">
+<block wx:for="{{articlelist}}" wx:key="index" wx:for-item="article">
+    <view class="item-group" data-id="{{article.id}}" data-title="{{article.title}}" data-doctorid="{{article.doctorid}}" bindtap="toarticle">
+      <view><image src='{{article.image}}' class='img'></image></view>   
+      <text class="info">{{article.title}}\n<text class="date">{{datelist[index]}}</text></text>    
+    </view>
+    </block>
+    </block>
+    <block wx:if="{{articlelength==0}}">
+  <text class="nothing">未搜索到相关文章</text>
+  </block>
+</view>

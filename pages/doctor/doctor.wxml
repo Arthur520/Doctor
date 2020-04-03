@@ -13,12 +13,25 @@
   <text class="big">擅长疾病</text>
   <view class="button-list">
   <block wx:for="{{diseaselist}}" wx:key="*this"wx:for-item="disease"wx:for-index="index">
-  <button class="button"type="primary"size="mini" form-type='submit' style='font-size: 8pt !important;'>{{disease}}</button>
+  <button class="button"type="primary"size="mini" form-type='submit' style='font-size: 8pt !important;' bindtap="findDoctor"data-name="{{disease}}">{{disease}}</button>
   </block>
   </view>
   <text class="big">个人简介</text>
   <view class="introduction">
   <text class='doctorinfo'>{{doctor.introduction}}</text>
+  </view>
+  <text class="big">个人文章</text>
+  <view class="item-list-group">
+ <block wx:if="{{articlelength!=0}}">
+  <block wx:for="{{articlelist}}" wx:key="index" wx:for-item="article">
+ <view class="item-group"data-id="{{article.id}}"data-doctorid="{{article.doctorid}}" bindtap="toarticle">   
+    <view class="article">{{article.title}}</view>
+    </view>
+  </block>
+  </block>
+  <block wx:if="{{articlelength==0}}">
+  <text class="nothing">暂无医生文章</text>
+  </block>
   </view>
 
   <text class="big">评论列表</text>

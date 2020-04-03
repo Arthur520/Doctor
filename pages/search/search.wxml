@@ -14,6 +14,6 @@
   </block>
   </block>
   <block wx:if="{{length==0}}">
-  <text class="nothing">该科室暂无医生数据</text>
+  <text class="nothing">未查询到相关医生</text>
   </block>
   </view>

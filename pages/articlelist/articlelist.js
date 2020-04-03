@@ -1,4 +1,5 @@
-// pages/doctorlist/doctorlist.js
+// pages/articlelist/articlelist.js
+var timer = require("../../utils/time.js");
 const app = getApp();
 Page({
 
@@ -6,29 +7,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-    doctorlist:null,
-  },
-  toDoctor: function (e) {
-    wx.navigateTo({
-      url: '/pages/doctor/doctor?id=' + e.currentTarget.dataset.id,
-    })
-  },
-  
 
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  toarticle: function (e) {
+    wx.navigateTo({
+      url: '/pages/article/article?id=' + e.currentTarget.dataset.id + "&doctorid=" + e.currentTarget.dataset.doctorid + "&title=" + e.currentTarget.dataset.title
+    })
+
+  },
   onLoad: function (options) {
     var serverUrl = app.globalData.serverUrl;
     var that = this;
-    const department=options.department;
+    const title=options.search
     wx.request({
-      url: serverUrl + '/doctor/department',
+      url: serverUrl + '/article/search',
       method: "POST",
       data: {
-        department: department,
-        address:app.globalData.complete_address
+        title: title,
       },
       header: {
         'content-type': 'application/json'
@@ -37,13 +36,19 @@ Page({
         var data = res.data;
         console.log(res);
         var list = data.data;
-        var length = data.data.length;
         console.log(list);
         if (data.status == 200) {
           that.setData({
-            doctorlist: list,
-            length:length
+            articlelist: list,
+            articlelength:list.length
           });
+          var datelist = new Array();
+          for (var i = 0; i < list.length; i++) {
+            datelist[i] = timer.js_date_another_time(that.data.articlelist[i].date);
+          }
+          that.setData({
+            datelist: datelist
+          })
         } else {
           // 失败弹出框
           wx.showToast({
@@ -54,8 +59,9 @@ Page({
         }
       }
     })
-    wx.hideLoading();
   },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -105,5 +111,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-  
 })

@@ -13,7 +13,11 @@ Page({
     article:null,
     length: 0 
   },
-
+  toDoctor: function (e) {
+    wx.navigateTo({
+      url: '/pages/doctor/doctor?id=' + e.currentTarget.dataset.id,
+    })
+  },
   inputFocus(e) {
     console.log(e, '键盘弹起')
     this.setData({
@@ -156,6 +160,12 @@ Page({
     })
     wx.hideLoading();
   },
+  toarticle: function (e) {
+    wx.navigateTo({
+      url: '/pages/article/article?id=' + e.currentTarget.dataset.id + "&doctorid=" + e.currentTarget.dataset.doctorid + "&title=" + e.currentTarget.dataset.title
+    })
+
+  },
   goLogin: function (e) {
     wx.showModal({
       title: '提示',
@@ -182,7 +192,8 @@ Page({
       articleId:options.id,
     });
     const id = options.id;
-    console.log(id);
+    const doctorid=options.doctorid;
+    const title=options.title;
     var that = this;
     var serverUrl = app.globalData.serverUrl;
     wx.showLoading({
@@ -206,6 +217,62 @@ Page({
         if (data.status == 200) {
           that.setData({
             article: article
+          });
+        } else {
+          // 失败弹出框
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+        }
+      }
+    })
+    wx.request({
+      url: serverUrl + '/article/similar',
+      method: "POST",
+      data: {
+        title: title,
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        var data = res.data;
+        console.log(res);
+        var list = data.data;
+        if (data.status == 200) {
+          that.setData({
+            articlelist: list,
+            articlelength:list.length
+          });
+        } else {
+          // 失败弹出框
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+        }
+      }
+    })
+    wx.request({
+      url: serverUrl + '/doctor/query',
+      method: "POST",
+      data: {
+        id: doctorid,
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        var data = res.data;
+        console.log(res);
+        var doctor = data.data;
+        console.log(doctor);
+        if (data.status == 200) {
+          that.setData({
+            doctor: doctor,
           });
         } else {
           // 失败弹出框

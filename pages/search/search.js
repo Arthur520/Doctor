@@ -7,7 +7,6 @@ Page({
    */
   data: {
     doctorlist: null,
-    length: 0
   },
   toDoctor: function (e) {
     wx.navigateTo({
@@ -24,6 +23,7 @@ Page({
     var serverUrl = app.globalData.serverUrl;
     var that = this;
     const search = options.search;
+    const diseaseName=options.diseaseName;
     const choice = options.choice;
     if (choice == 0) {
       wx.request({
@@ -136,6 +136,41 @@ Page({
         method: "POST",
         data: {
           disease: search,
+          address: app.globalData.complete_address
+        },
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function (res) {
+          var data = res.data;
+          console.log(res);
+          var list = data.data;
+          var length = data.data.length;
+          console.log(length);
+          console.log(list);
+          if (data.status == 200) {
+            that.setData({
+              doctorlist: list,
+              length: length
+            });
+          } else {
+            // 失败弹出框
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 3000
+            })
+          }
+        }
+      })
+      wx.hideLoading();
+    }
+    if (choice == 4) {
+      wx.request({
+        url: serverUrl + '/doctor/diseasesearch',
+        method: "POST",
+        data: {
+          disease: diseaseName,
           address: app.globalData.complete_address
         },
         header: {

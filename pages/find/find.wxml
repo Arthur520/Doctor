@@ -4,65 +4,84 @@
   <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav" >{{department1}}↓<view class="box"><view class="select_one" bindtap="mySelect1" data-name="全部内科"wx:if="{{select1}}"data-current="0">全部内科</view>
         <view class="select_one" bindtap="mySelect1" data-name="心血管内科"wx:if="{{select1}}"data-current="0">心血管内科</view>
         <view class="select_one" bindtap="mySelect1" data-name="神经内科"wx:if="{{select1}}"data-current="0">神经内科</view>
-        <view class="select_one" bindtap="mySelect1" data-name="消化科"wx:if="{{select1}}"data-current="0">消化科</view>
+        <view class="select_one" bindtap="mySelect1" data-name="消化内科"wx:if="{{select1}}"data-current="0">消化内科</view>
         <view class="select_one" bindtap="mySelect1" data-name="内分泌科"wx:if="{{select1}}"data-current="0">内分泌科</view>
         <view class="select_one" bindtap="mySelect1" data-name="肝病科"wx:if="{{select1}}"data-current="0">肝病科</view>
-        <view class="select_one" bindtap="mySelect1" data-name="感染科"wx:if="{{select1}}"data-current="0">感染科</view>
+        <view class="select_one" bindtap="mySelect1" data-name="感染内科"wx:if="{{select1}}"data-current="0">感染内科</view>
         <view class="select_one" bindtap="mySelect1" data-name="肿瘤科"wx:if="{{select1}}"data-current="0">肿瘤科</view>
-        <view class="select_one" bindtap="mySelect1" data-name="血液科"wx:if="{{select1}}"data-current="0">血液科</view>
-        <view class="select_one" bindtap="mySelect1" data-name="呼吸科"wx:if="{{select1}}"data-current="0">呼吸科</view>
+        <view class="select_one" bindtap="mySelect1" data-name="血液内科"wx:if="{{select1}}"data-current="0">血液内科</view>
+        <view class="select_one" bindtap="mySelect1" data-name="呼吸内科"wx:if="{{select1}}"data-current="0">呼吸内科</view>
         <view class="select_one" bindtap="mySelect1" data-name="肾内科"wx:if="{{select1}}"data-current="0">肾内科</view>
         <view class="select_one" bindtap="mySelect1" data-name="风湿免疫科"wx:if="{{select1}}"data-current="0">风湿免疫科</view>
         <view class="select_one" bindtap="mySelect1" data-name="精神科"wx:if="{{select1}}"data-current="0">精神科</view>
         </view>
 </view>
   <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">{{department2}}↓<view class="box"><view class="select_one" bindtap="mySelect2" data-name="全部外科"wx:if="{{select2}}"data-current="1">全部外科</view>
-        <view class="select_one" bindtap="mySelect2" data-name="普通外科"wx:if="{{select2}}"data-current="1">普通外科</view>
+        <view class="select_one" bindtap="mySelect2" data-name="普外科"wx:if="{{select2}}"data-current="1">普外科</view>
         <view class="select_one" bindtap="mySelect2" data-name="神经外科"wx:if="{{select2}}"data-current="1">神经外科</view>
-        <view class="select_one" bindtap="mySelect2" data-name="胸心外科"wx:if="{{select2}}"data-current="1">胸心外科</view>
+        <view class="select_one" bindtap="mySelect2" data-name="肝胆外科"wx:if="{{select2}}"data-current="1">肝胆外科</view>
         <view class="select_one" bindtap="mySelect2" data-name="骨科"wx:if="{{select2}}"data-current="1">骨科</view>
         <view class="select_one" bindtap="mySelect2" data-name="泌尿外科"wx:if="{{select2}}"data-current="1">泌尿外科</view>
         <view class="select_one" bindtap="mySelect2" data-name="整型外科"wx:if="{{select2}}"data-current="1">整型外科</view>
         <view class="select_one" bindtap="mySelect2" data-name="麻醉科"wx:if="{{select2}}"data-current="1">麻醉科</view>
+        <view class="select_one" bindtap="mySelect2" data-name="胸外科"wx:if="{{select2}}"data-current="1">胸外科</view>
+        <view class="select_one" bindtap="mySelect2" data-name="肛肠外科"wx:if="{{select2}}"data-current="1">肛肠外科</view>
+        <view class="select_one" bindtap="mySelect2" data-name="器官移植"wx:if="{{select2}}"data-current="1">器官移植</view>
         </view></view>
   <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">{{department3}}↓<view class="box"><view class="select_one" bindtap="mySelect3" data-name="其他全部"wx:if="{{select3}}"data-current="2">其他全部</view>
         <view class="select_one" bindtap="mySelect3" data-name="妇产科"wx:if="{{select3}}"data-current="2">妇产科</view>
         <view class="select_one" bindtap="mySelect3" data-name="儿科"wx:if="{{select3}}"data-current="2">儿科</view>
         <view class="select_one" bindtap="mySelect3" data-name="皮肤性病科"wx:if="{{select3}}"data-current="2">皮肤性病科</view>
         <view class="select_one" bindtap="mySelect3" data-name="眼科"wx:if="{{select3}}"data-current="2">眼科</view>
-        <view class="select_one" bindtap="mySelect3" data-name="耳鼻咽喉科"wx:if="{{select3}}"data-current="2">耳鼻咽喉科</view>
+        <view class="select_one" bindtap="mySelect3" data-name="耳鼻喉科"wx:if="{{select3}}"data-current="2">耳鼻喉科</view>
         <view class="select_one" bindtap="mySelect3" data-name="口腔科"wx:if="{{select3}}"data-current="2">口腔科</view>
-        <view class="select_one" bindtap="mySelect3" data-name="急诊/重症"wx:if="{{select3}}"data-current="2">急诊/重症</view>
+        <view class="select_one" bindtap="mySelect3" data-name="中医"wx:if="{{select3}}"data-current="2">中医</view>
         <view class="select_one" bindtap="mySelect3" data-name="影像科"wx:if="{{select3}}"data-current="2">影像科</view>
-        <view class="select_one" bindtap="mySelect3" data-name="检验科"wx:if="{{select3}}"data-current="2">检验科</view>
+        <view class="select_one" bindtap="mySelect3" data-name="男科"wx:if="{{select3}}"data-current="2">男科</view>
         </view></view>
 </view>
+<view class="search">     
+    <text bindtap="selectHospital" class="address">{{address}}</text>
+        <view class="search-input">    
+          <image class="search-icon" src="/image/search.png" mode="aspectFit"/>
+            <input class="serach-text" value="{{search}}" bindinput="searchInput"/>
+            <button class="searchBtn"type="primary"size="mini" form-type='submit'bindtap="searchBtn">搜索</button>
+        </view>        
+  </view>
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+
   <swiper-item class="item-list-group">
+  <scroll-view class="nav_left"scroll-y="true"style="height:{{winHeight - 31}}px">
   <block wx:for="{{firstArticleList}}" wx:key="index" wx:for-item="article">
-    <view class="item-group" data-id="{{article.id}}" bindtap="toarticle">
+    <view class="item-group" data-id="{{article.id}}" data-title="{{article.title}}" data-doctorid="{{article.doctorid}}" bindtap="toarticle">
       <view><image src='{{article.image}}' class='img'></image></view>   
       <text class="info">{{article.title}}\n<text class="date">{{datelist1[index]}}</text></text>    
     </view>
     </block>
+    </scroll-view>
   </swiper-item>
+  
 
   <swiper-item class="item-list-group">
+  <scroll-view class="nav_left"scroll-y="true"style="height:{{winHeight - 31}}px">
     <block wx:for="{{secondArticleList}}" wx:key="index" wx:for-item="article">
-     <view class="item-group" data-id="{{article.id}}" bindtap="toarticle">
+     <view class="item-group" data-id="{{article.id}}"data-title="{{article.title}}" data-doctorid="{{article.doctorid}}" bindtap="toarticle">
       <view><image src='{{article.image}}' class='img'></image></view>   
       <text class="info">{{article.title}}\n<text class="date">{{datelist2[index]}}</text></text>   
     </view>
     </block>
+    </scroll-view>
   </swiper-item>
 
   <swiper-item class="item-list-group">
+  <scroll-view class="nav_left"scroll-y="true"style="height:{{winHeight - 31}}px">
     <block wx:for="{{thirdArticleList}}" wx:key="index" wx:for-item="article">
-     <view class="item-group" data-id="{{article.id}}" bindtap="toarticle">
+     <view class="item-group" data-id="{{article.id}}"data-title="{{article.title}}" data-doctorid="{{article.doctorid}}" bindtap="toarticle">
       <view><image src='{{article.image}}' class='img'></image></view>   
       <text class="info">{{article.title}}\n<text class="date">{{datelist3[index]}}</text></text>    
     </view>
     </block>
+    </scroll-view>
   </swiper-item>
   
 </swiper>

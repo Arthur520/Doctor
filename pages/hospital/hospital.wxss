@@ -60,8 +60,4 @@ text-align: left;
   height:30rpx;
   margin-top:25rpx;
 } 
-.nodata_text{
-  color: black;
-  font-size: 28rpx; 
-  text-align: center;
-}
+

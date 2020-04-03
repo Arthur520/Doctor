@@ -9,6 +9,18 @@ Page({
     cateItems: [
       {
         cate_id: 1,
+        cate_name: "全国",
+        ishaveChild: true,
+        children:
+          [
+            {
+              child_id: 1,
+              name: '全国'
+            },
+          ]
+      },
+      {
+        cate_id: 2,
         cate_name: "北京",
         ishaveChild: true,
         children:
@@ -77,7 +89,7 @@ Page({
           ]
       },
       {
-        cate_id: 2,
+        cate_id: 3,
         cate_name: "江苏",
         ishaveChild: true,
         children:
@@ -138,7 +150,7 @@ Page({
           ]
       },
       {
-        cate_id: 3,
+        cate_id: 4,
         cate_name: "黑龙江",
         ishaveChild: true,
         children:
@@ -195,7 +207,7 @@ Page({
           ]
       },
       {
-        cate_id: 4,
+        cate_id: 5,
         cate_name: "陕西",
         ishaveChild: true,
         children:
@@ -245,7 +257,7 @@ Page({
           ]
       },
       {
-        cate_id: 5,
+        cate_id: 6,
         cate_name: "上海",
         ishaveChild: true,
         children:
@@ -323,7 +335,7 @@ Page({
           ]
       },
       {
-        cate_id: 6,
+        cate_id: 7,
         cate_name: "河南",
         ishaveChild: true,
         children:
@@ -405,7 +417,7 @@ Page({
           ]
       },
       {
-        cate_id: 7,
+        cate_id: 8,
         cate_name: "广东",
         ishaveChild: true,
         children:
@@ -502,7 +514,7 @@ Page({
           ]
       },
       {
-        cate_id: 8,
+        cate_id: 9,
         cate_name: "广西",
         ishaveChild: true,
         children:
@@ -568,7 +580,7 @@ Page({
           ]
       },
       {
-        cate_id: 9,
+        cate_id: 10,
         cate_name: "浙江",
         ishaveChild: true,
         children:
@@ -623,7 +635,7 @@ Page({
           ]
       },
       {
-        cate_id: 10,
+        cate_id: 11,
         cate_name: "安徽",
         ishaveChild: true,
         children:
@@ -702,7 +714,7 @@ Page({
           ]
       },
       {
-        cate_id: 11,
+        cate_id: 12,
         cate_name: "江西",
         ishaveChild: true,
         children:
@@ -757,7 +769,7 @@ Page({
           ]
       },
       {
-        cate_id: 12,
+        cate_id: 13,
         cate_name: "福建",
         ishaveChild: true,
         children:
@@ -805,7 +817,7 @@ Page({
           ]
       },
       {
-        cate_id: 13,
+        cate_id: 14,
         cate_name: "山东",
         ishaveChild: true,
         children:
@@ -884,7 +896,7 @@ Page({
           ]
       },
       {
-        cate_id: 14,
+        cate_id: 15,
         cate_name: "山西",
         ishaveChild: true,
         children:
@@ -939,7 +951,7 @@ Page({
           ]
       },
       {
-        cate_id: 15,
+        cate_id: 16,
         cate_name: "河北",
         ishaveChild: true,
         children:
@@ -994,7 +1006,7 @@ Page({
           ]
       },
       {
-        cate_id: 16,
+        cate_id: 17,
         cate_name: "天津",
         ishaveChild: true,
         children:
@@ -1065,7 +1077,7 @@ Page({
           ]
       },
       {
-        cate_id: 17,
+        cate_id: 18,
         cate_name: "辽宁",
         ishaveChild: true,
         children:
@@ -1133,7 +1145,7 @@ Page({
           ]
       },
       {
-        cate_id: 18,
+        cate_id: 19,
         cate_name: "吉林",
         ishaveChild: true,
         children:
@@ -1181,7 +1193,7 @@ Page({
           ]
       },
       {
-        cate_id: 19,
+        cate_id: 20,
         cate_name: "湖北",
         ishaveChild: true,
         children:
@@ -1252,7 +1264,7 @@ Page({
           ]
       },
       {
-        cate_id: 20,
+        cate_id: 21,
         cate_name: "湖南",
         ishaveChild: true,
         children:
@@ -1319,7 +1331,7 @@ Page({
           ]
       },
       {
-        cate_id: 21,
+        cate_id: 22,
         cate_name: "四川",
         ishaveChild: true,
         children:
@@ -1406,7 +1418,7 @@ Page({
           ]
       },
       {
-        cate_id: 22,
+        cate_id: 23,
         cate_name: "重庆",
         ishaveChild: true,
         children:
@@ -1489,7 +1501,7 @@ Page({
           ]
       },
       {
-        cate_id: 23,
+        cate_id: 24,
         cate_name: "甘肃",
         ishaveChild: true,
         children:
@@ -1551,7 +1563,7 @@ Page({
           ]
       },
       {
-        cate_id: 24,
+        cate_id: 25,
         cate_name: "云南",
         ishaveChild: true,
         children:
@@ -1621,7 +1633,7 @@ Page({
           ]
       },
       {
-        cate_id: 25,
+        cate_id: 26,
         cate_name: "新疆",
         ishaveChild: true,
         children:
@@ -1687,7 +1699,7 @@ Page({
           ]
       },
       {
-        cate_id: 26,
+        cate_id: 27,
         cate_name: "内蒙古",
         ishaveChild: true,
         children:
@@ -1745,7 +1757,7 @@ Page({
           ]
       },
       {
-        cate_id: 27,
+        cate_id: 28,
         cate_name: "海南",
         ishaveChild: true,
         children:
@@ -1759,7 +1771,7 @@ Page({
           ]
       },
       {
-        cate_id: 28,
+        cate_id: 29,
         cate_name: "贵州",
         ishaveChild: true,
         children:
@@ -1806,7 +1818,7 @@ Page({
           ]
       },
       {
-        cate_id: 29,
+        cate_id: 30,
         cate_name: "青海",
         ishaveChild: true,
         children:
@@ -1829,7 +1841,7 @@ Page({
           ]
       },
       {
-        cate_id: 30,
+        cate_id: 31,
         cate_name: "宁夏",
         ishaveChild: true,
         children:
@@ -1860,7 +1872,7 @@ Page({
           ]
       },
       {
-        cate_id: 31,
+        cate_id: 32,
         cate_name: "西藏",
         ishaveChild: true,
         children:

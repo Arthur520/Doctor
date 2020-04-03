@@ -35,6 +35,11 @@ Page({
       isInput: true, 
     })
   },
+  findDoctor:function(e){
+    wx.navigateTo({
+      url: '/pages/search/search?diseaseName=' + e.currentTarget.dataset.name + "&choice=" + 4
+    })
+  },
   bind: function (e) {
     this.setData({
       content: e.detail.value
@@ -180,6 +185,12 @@ Page({
       }
     })
   },
+  toarticle: function (e) {
+    wx.navigateTo({
+      url: '/pages/article/article?id=' + e.currentTarget.dataset.id + "&doctorid=" + e.currentTarget.dataset.doctorid
+    })
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -213,6 +224,34 @@ Page({
           that.setData({
             doctor: doctor,
             diseaselist:doctor.disease.split("/")
+          });
+        } else {
+          // 失败弹出框
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+        }
+      }
+    })
+    wx.request({
+      url: serverUrl + '/article/doctor',
+      method: "POST",
+      data: {
+        doctorid: id,
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        var data = res.data;
+        console.log(res);
+        var list = data.data;
+        if (data.status == 200) {
+          that.setData({
+            articlelist: list,
+            articlelength:list.length
           });
         } else {
           // 失败弹出框

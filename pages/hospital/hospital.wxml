@@ -11,19 +11,15 @@
   </scroll-view>
   <!--右侧栏-->
   <scroll-view class="nav_right"scroll-y="true"style="height: 667px">
-  <!--如果有数据，才遍历项-->
-    <view wx:if="{{cateItems[curIndex].ishaveChild}}">
+  <!--数据，遍历项-->
       <block wx:for="{{cateItems[curIndex].children}}" wx:key="unique">
-        <view class="nav_right_items" data-department="{{item.name}}" bindtap="isDetail">    
+        <view class="nav_right_items" data-department="{{item.name}}" bindtap="isDetail"> 
           <view class="info">
           <view class="title">{{item.name}}</view>
           <image src="/image/right.png" class="img"></image>
           </view>
         </view>
       </block>
-    </view>
-    <!--如果无数据，则显示数据-->
-    <view class="nodata_text" wx:else>该分类暂无数据</view>
   </scroll-view>
 
 </view>

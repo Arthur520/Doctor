@@ -31,7 +31,7 @@ App({
   globalData: {
     userInfo: null,
     serverUrl: "http://localhost:8080/doctor/",
-    address:"成都",
-    complete_address:"四川-成都"
+    address:"全国",
+    complete_address:"全国-全国"
   }
 })

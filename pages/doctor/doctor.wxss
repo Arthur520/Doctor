@@ -26,6 +26,9 @@
   font: 32rpx;
   color: #08b308;
 }
+.article{
+   color: #053dd8;
+}
 .info-group .dinfo{
   font-size: 26rpx;
   color: #0c0c0c;

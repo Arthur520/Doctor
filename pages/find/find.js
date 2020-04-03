@@ -95,8 +95,9 @@ Page({
   //点击切换
   toarticle:function(e){
     wx.navigateTo({
-      url: '/pages/article/article?id=' + e.currentTarget.dataset.id
+      url: '/pages/article/article?id=' + e.currentTarget.dataset.id + "&doctorid=" + e.currentTarget.dataset.doctorid + "&title=" + e.currentTarget.dataset.title
     })
+    
   },
   change1: function () {
     var serverUrl = app.globalData.serverUrl;
@@ -213,6 +214,16 @@ Page({
           })
         }
       }
+    })
+  },
+  searchInput: function (e) {
+    this.setData({
+      search: e.detail.value
+    })
+  },
+  searchBtn: function (e) {
+    wx.navigateTo({
+      url: '/pages/articlelist/articlelist?search=' + this.data.search
     })
   },
 

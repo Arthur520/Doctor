@@ -8,11 +8,11 @@ Page({
   data: {
     currentTab: 0,
     griddata:[
-      { name: "消化内科", img: "/image/department1.png", url: "/pages/doctorlist/doctorlist?department=消化内科/消化科/脾胃//胃肠/肠胃"},
+      { name: "消化内科", img: "/image/department1.png", url: "/pages/doctorlist/doctorlist?department=消化内科/消化科/脾胃内科/胃肠内科/肠胃科/胃肠科"},
       { name: "神经内科", img: "/image/department2.png", url: "/pages/doctorlist/doctorlist?department=神经内科"},
-      { name: "儿科", img: "/image/department3.png", url: "/pages/doctorlist/doctorlist?department=儿" },
-      { name: "耳鼻喉科", img: "/image/department4.png", url: "/pages/doctorlist/doctorlist?department=耳鼻/五官"},
-      { name: "妇产科", img: "/image/department5.png", url: "/pages/doctorlist/doctorlist?department=妇科/产科/妇女"},
+      { name: "儿科", img: "/image/department3.png", url: "/pages/doctorlist/doctorlist?department=儿科/小儿科" },
+      { name: "耳鼻喉科", img: "/image/department4.png", url: "/pages/doctorlist/doctorlist?department=耳鼻喉科/五官科"},
+      { name: "妇产科", img: "/image/department5.png", url: "/pages/doctorlist/doctorlist?department=妇科/产科/妇产科"},
       { name: "更多", img: "/image/department6.png", url: "/pages/more/more" },
     ],
     indicatorDots: true, // 是否显示面板指示点
@@ -208,7 +208,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**

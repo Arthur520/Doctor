@@ -7,7 +7,6 @@ Page({
    */
   data: {
     doctorlist: null,
-    length: 0
   },
   toDoctor: function (e) {
     wx.navigateTo({

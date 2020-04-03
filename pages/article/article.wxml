@@ -1,10 +1,33 @@
 <!--pages/article/article.wxml-->
 <view class="content">
     <!-- 标题内容 -->
-     <text class="title">{{article.title}}</text>
-     <image class="image" src="{{article.image}}"></image>
+    <view class="item-list-group">
+    <view class="item-group">
+    <image src="{{doctor.photo}}" class="doctorimg" data-id="{{doctor.id}}"bindtap="toDoctor"></image>
+    <view class="info-group">
+    <view class="title1" data-id="{{doctor.id}}"bindtap="toDoctor">{{doctor.name}}</view>
+    <view class="dinfo">{{doctor.department}} {{doctor.position}}</view>
+    <view class="hinfo">{{doctor.hospital}}</view>
+    </view>
+    <text class="toplike">关注数：{{doctor.fans}}</text>
+  </view>
+  </view>
+     <text class="title">{{article.title}}\n</text>
      <text class="article-content">{{article.passage}}</text>
 </view>
+<text class="big">相关文章</text>
+  <view class="item-list-group">
+ <block wx:if="{{articlelength!=0}}">
+  <block wx:for="{{articlelist}}" wx:key="index" wx:for-item="article">
+ <view class="item-group"data-id="{{article.id}}"data-title="{{article.title}}"    data-doctorid="{{article.doctorid}}" bindtap="toarticle">   
+    <view class="article">{{article.title}}</view>
+    </view>
+  </block>
+  </block>
+  <block wx:if="{{articlelength==0}}">
+  <text class="nothing">暂无相关文章</text>
+  </block>
+  </view>
 
     <text class="big">评论列表</text>
   <view class="review-list">

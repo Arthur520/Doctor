@@ -1,0 +1,29 @@
+/* pages/articlelist/articlelist.wxss */
+
+.item-list-group{
+  display: flex;
+  flex-direction: column;
+}
+.item-list-group .item-group{
+  padding: 10rpx 0;
+  border-bottom: 1px solid #D4D4D4;
+  display:flex;
+  flex-direction: row;
+  position: relative;
+}
+.img{
+  width: 80rpx;
+  height:100rpx;
+}
+.info{ 
+  font-size: 32rpx;
+  word-break: break-all;
+  margin-left:20rpx;
+}
+.date{
+  font-size: 21rpx;
+  word-break: break-all;
+  position: absolute;
+  bottom:0;
+  right:0;
+}
