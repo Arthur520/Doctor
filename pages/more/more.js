@@ -15,32 +15,32 @@ Page({
             {
               child_id: 1,
               name: '呼吸内科',
-              search: '呼吸内科/呼吸科/呼吸与危重症医学科/肺病科'
+              search: '呼吸内科'
             },
             {
               child_id: 2,
               name: '消化内科',
-              search: '消化内科/消化科/脾胃内科/胃肠内科/肠胃科/胃肠科'
+              search: '消化内科'
             },
             {
               child_id: 3,
               name: '心血管内科',
-              search: '心血管内科/心血管科/心脏内科'
+              search: '心血管内科'
             },
             {
               child_id: 4,
               name: '血液内科',
-              search: '血液内科/血液科'
+              search: '血液内科'
             },
             {
               child_id: 5,
-              name: '肾脏内科',
-              search: '肾脏内科/肾内科/肾病内科'
+              name: '肾内科',
+              search: '肾内科'
             },
             {
               child_id: 6,
               name: '内分泌科',
-              search: '内分泌科/代谢科'
+              search: '内分泌科'
             },
             {
               child_id: 7,
@@ -50,12 +50,12 @@ Page({
             {
               child_id: 8,
               name: '感染科',
-              search: '感染科/感染内科/传染科/传染病科'
+              search: '感染科'
             },
             {
               child_id: 9,
               name: '老年病科',
-              search: '老年病科/老年科'
+              search: '老年病科'
             },
             {
               child_id: 10,
@@ -65,7 +65,7 @@ Page({
             {
               child_id: 11,
               name: '肝病科',
-              search: '肝胆内科/肝病科'
+              search: '肝胆内科'
             },
             {
               child_id: 12,
@@ -75,12 +75,12 @@ Page({
             {
               child_id: 13,
               name: '变态反应科',
-              search: '变态反应科/过敏科'
+              search: '变态反应科'
             },
             {
               child_id: 14,
               name: '普内科',
-              search: '普内科/普通内科/综合内科/门诊内科'
+              search: '门诊内科'
             }
           ]
       },
@@ -93,12 +93,12 @@ Page({
             {
               child_id: 1,
               name: '普外科',
-              search:'普外科/普通外科/胃肠外科'
+              search:'普外科'
             },
             {
               child_id: 2,
               name: '肝胆外科',
-              search: '肝胆外科/肝胆胰外科'
+              search: '肝胆外科'
             },
             {
               child_id: 3,
@@ -108,37 +108,37 @@ Page({
             {
               child_id: 4,
               name: '神经外科',
-              search: '神经外科/脑外科'
+              search: '神经外科'
             },
             {
               child_id: 5,
               name: '泌尿外科',
-              search: '泌尿外科/肾病外科'
+              search: '泌尿外科'
             },
             {
               child_id: 6,
               name: '心血管外科',
-              search: '心血管外科/心胸外科/血管外科/心脏外科/心外科'
+              search: '心血管外科'
             },
             {
               child_id: 7,
               name: '胸外科',
-              search: '心胸外科/胸心外科/胸外科'
+              search: '胸外科'
             },
             {
               child_id: 8,
               name: '肛肠外科',
-              search: '肛肠外科/肛肠科/痔瘘科'
+              search: '肛肠外科'
             },
             {
               child_id: 9,
               name: '骨科',
-              search: '骨科/关节外科/脊柱外科'
+              search: '骨科'
             },
             {
               child_id: 10,
               name: '整型科',
-              search: '整型科/整型外科/烧伤科/美容科'
+              search: '整型科'
             },
             {
               child_id: 11,
@@ -166,7 +166,7 @@ Page({
             {
               child_id: 1,
               name: '妇产科',
-              search: '妇科/产科/妇产科'
+              search: '妇产科'
             },
             
           ]
@@ -179,7 +179,7 @@ Page({
           {
             child_id: 1,
             name: '儿科',
-            search: '儿科/小儿科'
+            search: '儿科'
           }
         ]
       },
@@ -191,7 +191,17 @@ Page({
           {
             child_id: 1,
             name: '男科',
-            search: '男科/生殖科/不孕不育科'
+            search: '男科科'
+          },
+          {
+            child_id: 2,
+            name: '不孕不育科',
+            search: '不孕不育科'
+          },
+          {
+            child_id: 3,
+            name: '生殖科',
+            search: '生殖科'
           }
         ]
       },
@@ -220,7 +230,7 @@ Page({
           {
             child_id: 1,
             name: '耳鼻喉科',
-            search: '耳鼻喉科/五官科'
+            search: '耳鼻喉科'
           },
           {
             child_id: 2,
@@ -230,7 +240,7 @@ Page({
           {
             child_id: 3,
             name: '眼科',
-            search: '眼科/五官科'
+            search: '眼科'
           }
         ]
       },
@@ -259,7 +269,7 @@ Page({
           {
             child_id: 2,
             name: '心理健康科',
-            search: '心理科/精神科/心理健康科'
+            search: '心理健康科'
           }
         ]
       },
@@ -271,7 +281,7 @@ Page({
           {
             child_id: 1,
             name: '不孕不育',
-            search: '不孕不育科/生殖科/男科'
+            search: '不孕不育科'
           }
           
         ]
@@ -283,8 +293,28 @@ Page({
         children: [
           {
             child_id: 1,
-            name: '中医科',
-            search: '中医内科/中医外科/中医消化科/中医呼吸科/中医男科/中医肝病科'
+            name: '中医内科',
+            search: '中医内科'
+          },
+          {
+            child_id: 2,
+            name: '中医外科',
+            search: '中医外科'
+          },
+          {
+            child_id: 3,
+            name: '中医消化科',
+            search: '中医消化科'
+          },
+          {
+            child_id: 4,
+            name: '中医呼吸科',
+            search: '中医呼吸科'
+          },
+          {
+            child_id: 5,
+            name: '中医肝病科',
+            search: '中医肝病科'
           }
         ]
       },
@@ -295,23 +325,33 @@ Page({
         children: [
           {
             child_id: 1,
-            name: '医学影像科',
-            search: '影像科/医学影像科'
+            name: '影像科',
+            search: '影像科'
           },
           {
             child_id: 2,
-            name: '核医学科',
-            search: '核医学科/PET/同位素科'
+            name: '医学影像科',
+            search: '医学影像科'
           },
           {
             child_id: 3,
+            name: '核医学科',
+            search: '核医学科'
+          },
+          {
+            child_id: 4,
             name: '放射科',
             search: '放射科'
           },
           {
-            child_id: 4,
+            child_id: 5,
             name: '超声科',
-            search: '超声科/彩超科/B超室/超声诊断科'
+            search: '超声科'
+          },
+          {
+            child_id: 6,
+            name: '超声诊断科',
+            search: '超声诊断科'
           }
         ]
       },

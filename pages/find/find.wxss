@@ -116,6 +116,7 @@ text-align: left;
 .item-list-group{
   display: flex;
   flex-direction: column;
+  
 }
 .item-list-group .item-group{
   padding: 10rpx 0;

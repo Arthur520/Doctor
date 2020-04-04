@@ -187,7 +187,7 @@ Page({
   },
   toarticle: function (e) {
     wx.navigateTo({
-      url: '/pages/article/article?id=' + e.currentTarget.dataset.id + "&doctorid=" + e.currentTarget.dataset.doctorid
+      url: '/pages/article/article?id=' + e.currentTarget.dataset.id + "&doctorid=" + e.currentTarget.dataset.doctorid + "&title=" + e.currentTarget.dataset.title
     })
 
   },

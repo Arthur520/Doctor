@@ -24,7 +24,7 @@
   <view class="item-list-group">
  <block wx:if="{{articlelength!=0}}">
   <block wx:for="{{articlelist}}" wx:key="index" wx:for-item="article">
- <view class="item-group"data-id="{{article.id}}"data-doctorid="{{article.doctorid}}" bindtap="toarticle">   
+ <view class="item-group"data-id="{{article.id}}"data-title="{{article.title}}"data-doctorid="{{article.doctorid}}" bindtap="toarticle">   
     <view class="article">{{article.title}}</view>
     </view>
   </block>

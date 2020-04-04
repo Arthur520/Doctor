@@ -7,6 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    page: 1,                              //当前请求数据是第几页
+    pageSize: 12,                          //每页数据条数
+    hasMoreData: true,                      //上拉时是否继续请求数据，即是否还有更多数据
 
   },
 
@@ -17,17 +20,71 @@ Page({
     wx.navigateTo({
       url: '/pages/article/article?id=' + e.currentTarget.dataset.id + "&doctorid=" + e.currentTarget.dataset.doctorid + "&title=" + e.currentTarget.dataset.title
     })
-
   },
-  onLoad: function (options) {
+  getInfo: function (message) {
     var serverUrl = app.globalData.serverUrl;
     var that = this;
-    const title=options.search
+    wx.showNavigationBarLoading()              //在当前页面显示导航条加载动画
+    wx.showLoading({                        //显示 loading 提示框
+      title: message,
+    })
     wx.request({
       url: serverUrl + '/article/search',
       method: "POST",
       data: {
-        title: title,
+        name: that.data.title,
+        fans: that.data.page
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        var data = res.data;
+        var list = data.data;
+        var contentlistTem = that.data.articlelist;
+        if (list.length > 0) {
+          wx.hideNavigationBarLoading()     //在当前页面隐藏导航条加载动画
+          wx.hideLoading()               //隐藏 loading 提示框
+          if (that.data.page == 1) {
+            contentlistTem = []
+          }
+          if (list.length < that.data.pageSize) {
+            that.setData({
+              articlelist: contentlistTem.concat(list),
+              hasMoreData: false
+            })
+          } else {
+            that.setData({
+              articlelist: contentlistTem.concat(list),
+              hasMoreData: true,
+              page: that.data.page + 1
+            })
+          }
+        }
+      },
+      fail: function (res) {
+        wx.hideNavigationBarLoading()
+        wx.hideLoading()
+        fail()
+      },
+      complete: function (res) {
+
+      },
+    })
+  },
+  onLoad: function (options) {
+    var serverUrl = app.globalData.serverUrl;
+    var that = this;
+    const title=options.search;
+    that.setData({
+      title: title,
+    })
+    wx.request({
+      url: serverUrl + '/article/search',
+      method: "POST",
+      data: {
+        name: title,
+        fans:1
       },
       header: {
         'content-type': 'application/json'
@@ -40,7 +97,8 @@ Page({
         if (data.status == 200) {
           that.setData({
             articlelist: list,
-            articlelength:list.length
+            articlelength:list.length,
+            page:that.data.page+1
           });
           var datelist = new Array();
           for (var i = 0; i < list.length; i++) {
@@ -102,7 +160,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (this.data.hasMoreData) {
+      this.getInfo('加载更多数据')
+    } else {
+      wx.showToast({
+        title: '没有更多数据',
+      })
+    }
   },
 
   /**

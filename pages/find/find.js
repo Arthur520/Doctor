@@ -7,6 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    page1: 1,
+    page2:1,
+    page3:1,                              //当前请求数据是第几页
+    pageSize: 15,                          //每页数据条数
+    hasMoreData1: true,
+    hasMoreData2: true,
+    hasMoreData3: true,                      //上拉时是否继续请求数据，即是否还有更多数据
     winWidth: 0,
     winHeight: 0,
     currentTab: 0,
@@ -16,14 +23,18 @@ Page({
     select1: false,
     select2:false,
     select3:false,
-    department1: "全部内科",
-    department2:"全部外科",
-    department3: "其他全部"
+    show1:"内科",
+    show2: "外科",
+    show3: "其他",
+    department1: "消化内科",
+    department2:"神经外科",
+    department3: "口腔科"
   },
   mySelect1(e) {
     var name = e.currentTarget.dataset.name
     this.setData({
-      department1: name
+      department1: name,
+      show1:name
     })
     this.change1();
     console.log(this.data.department1)
@@ -31,7 +42,8 @@ Page({
   mySelect2(e) {
     var name = e.currentTarget.dataset.name
     this.setData({
-      department2: name
+      department2: name,
+      show2: name
     })
     this.change2();
     console.log(this.data.department2)
@@ -39,7 +51,8 @@ Page({
   mySelect3(e) {
     var name = e.currentTarget.dataset.name
     this.setData({
-      department3: name
+      department3: name,
+      show3: name
     })
     this.change3();
     console.log(this.data.department3)
@@ -99,14 +112,216 @@ Page({
     })
     
   },
-  change1: function () {
+  getInfo1: function (message) {
     var serverUrl = app.globalData.serverUrl;
     var that = this;
+    wx.showNavigationBarLoading()              //在当前页面显示导航条加载动画
+    wx.showLoading({                        //显示 loading 提示框
+      title: message,
+    })
     wx.request({
       url: serverUrl + '/article/changefirsttype',
       method: "POST",
       data: {
-        type: that.data.department1,
+        name: that.data.department1,
+        fans: that.data.page1
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        var data = res.data;
+        var list = data.data;
+        var contentlistTem = that.data.firstArticleList;
+        if (list.length > 0) {
+          wx.hideNavigationBarLoading()     //在当前页面隐藏导航条加载动画
+          wx.hideLoading()               //隐藏 loading 提示框
+          if (that.data.page1 == 1) {
+            contentlistTem = []
+          }
+          if (list.length < that.data.pageSize) {
+            that.setData({
+              firstArticleList: contentlistTem.concat(list),
+              hasMoreData1: false
+            })
+            var datelist_ = new Array();
+            for (var i = 0; i < list.length; i++) {
+              datelist_[i] = timer.js_date_another_time(that.data.firstArticleList[i].date);
+            }
+            that.setData({
+              datelist1: that.data.datelist1.concat(datelist_)
+            })
+          } else {
+            that.setData({
+              firstArticleList: contentlistTem.concat(list),
+              hasMoreData1: true,
+              page1: that.data.page1 + 1
+            })
+            var datelist_ = new Array();
+            for (var i = 0; i < list.length; i++) {
+              datelist_[i] = timer.js_date_another_time(that.data.firstArticleList[i].date);
+            }
+            that.setData({
+              datelist1: that.data.datelist1.concat(datelist_)
+            })
+          }
+        }
+      },
+      fail: function (res) {
+        wx.hideNavigationBarLoading()
+        wx.hideLoading()
+        fail()
+      },
+      complete: function (res) {
+
+      },
+    })
+  },
+  getInfo2: function (message) {
+    var serverUrl = app.globalData.serverUrl;
+    var that = this;
+    wx.showNavigationBarLoading()              //在当前页面显示导航条加载动画
+    wx.showLoading({                        //显示 loading 提示框
+      title: message,
+    })
+    wx.request({
+      url: serverUrl + '/article/changesecondtype',
+      method: "POST",
+      data: {
+        name: that.data.department2,
+        fans: that.data.page2
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        var data = res.data;
+        var list = data.data;
+        var contentlistTem = that.data.secondArticleList;
+        if (list.length > 0) {
+          wx.hideNavigationBarLoading()     //在当前页面隐藏导航条加载动画
+          wx.hideLoading()               //隐藏 loading 提示框
+          if (that.data.page2 == 1) {
+            contentlistTem = []
+          }
+          if (list.length < that.data.pageSize) {
+            that.setData({
+              secondArticleList: contentlistTem.concat(list),
+              hasMoreData2: false
+            })
+            var datelist_ = new Array();
+            for (var i = 0; i < list.length; i++) {
+              datelist_[i] = timer.js_date_another_time(that.data.secondArticleList[i].date);
+            }
+            that.setData({
+              datelist2: that.data.datelist2.concat(datelist_)
+            })
+          } else {
+            that.setData({
+              secondArticleList: contentlistTem.concat(list),
+              hasMoreData2: true,
+              page2: that.data.page2 + 1
+            })
+            var datelist_ = new Array();
+            for (var i = 0; i < list.length; i++) {
+              datelist_[i] = timer.js_date_another_time(that.data.secondArticleList[i].date);
+            }
+            that.setData({
+              datelist2: that.data.datelist2.concat(datelist_)
+            })
+          }
+        }
+      },
+      
+      fail: function (res) {
+        wx.hideNavigationBarLoading()
+        wx.hideLoading()
+        fail()
+      },
+      complete: function (res) {
+
+      },
+    })
+  },
+  getInfo3: function (message) {
+    var serverUrl = app.globalData.serverUrl;
+    var that = this;
+    wx.showNavigationBarLoading()              //在当前页面显示导航条加载动画
+    wx.showLoading({                        //显示 loading 提示框
+      title: message,
+    })
+    wx.request({
+      url: serverUrl + '/article/changethirdtype',
+      method: "POST",
+      data: {
+        name: that.data.department3,
+        fans: that.data.page3
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        var data = res.data;
+        var list = data.data;
+        var contentlistTem = that.data.thirdArticleList;
+        if (list.length > 0) {
+          wx.hideNavigationBarLoading()     //在当前页面隐藏导航条加载动画
+          wx.hideLoading()               //隐藏 loading 提示框
+          if (that.data.page3 == 1) {
+            contentlistTem = []
+          }
+          if (list.length < that.data.pageSize) {
+            that.setData({
+              thirdArticleList: contentlistTem.concat(list),
+              hasMoreData3: false
+            })
+            var datelist_ = new Array();
+            for (var i = 0; i < list.length; i++) {
+              datelist_[i] = timer.js_date_another_time(that.data.thirdArticleList[i].date);
+            }
+            that.setData({
+              datelist3: that.data.datelist3.concat(datelist_)
+            })
+          } else {
+            that.setData({
+              thirdArticleList: contentlistTem.concat(list),
+              hasMoreData3: true,
+              page3: that.data.page3 + 1
+            })
+            var datelist_ = new Array();
+            for (var i = 0; i < list.length; i++) {
+              datelist_[i] = timer.js_date_another_time(that.data.thirdArticleList[i].date);
+            }
+            that.setData({
+              datelist3: that.data.datelist3.concat(datelist_)
+            })
+          }
+        }
+      },
+      fail: function (res) {
+        wx.hideNavigationBarLoading()
+        wx.hideLoading()
+        fail()
+      },
+      complete: function (res) {
+
+      },
+    })
+  },
+  change1: function () {
+    var serverUrl = app.globalData.serverUrl;
+    var that = this;
+    that.setData({
+      page1: 1,
+      hasMoreData1:true,
+      firstArticleList:null
+    })
+    wx.request({
+      url: serverUrl + '/article/changefirsttype',
+      method: "POST",
+      data: {
+        name: that.data.department1,
+        fans:1
       },
       header: {
         'content-type': 'application/json'
@@ -118,7 +333,8 @@ Page({
         console.log(list);
         if (data.status == 200) {
           that.setData({
-            firstArticleList: list
+            firstArticleList: list,
+            page1:that.data.page1+1
           });
           var datelist1 = new Array();
           for (var i = 0; i < list.length; i++) {
@@ -141,11 +357,16 @@ Page({
   change2: function () {
     var serverUrl = app.globalData.serverUrl;
     var that = this;
+    that.setData({
+      page2: 1,
+      hasMoreData2: true
+    })
     wx.request({
       url: serverUrl + '/article/changesecondtype',
       method: "POST",
       data: {
-        type: that.data.department2,
+        name: that.data.department2,
+        fans:1
       },
       header: {
         'content-type': 'application/json'
@@ -157,7 +378,8 @@ Page({
         console.log(list);
         if (data.status == 200) {
           that.setData({
-            secondArticleList: list
+            secondArticleList: list,
+            page2: that.data.page2 + 1
           });
           var datelist2 = new Array();
           for (var i = 0; i < list.length; i++) {
@@ -180,11 +402,16 @@ Page({
   change3: function () {
     var serverUrl = app.globalData.serverUrl;
     var that = this;
+    that.setData({
+      page3: 1,
+      hasMoreData3: true
+    })
     wx.request({
       url: serverUrl + '/article/changethirdtype',
       method: "POST",
       data: {
-        type: that.data.department3,
+        name: that.data.department3,
+        fans:1
       },
       header: {
         'content-type': 'application/json'
@@ -196,7 +423,8 @@ Page({
         console.log(list);
         if (data.status == 200) {
           that.setData({
-            thirdArticleList: list
+            thirdArticleList: list,
+            page3: that.data.page3 + 1
           });
           var datelist3 = new Array();
           for (var i = 0; i < list.length; i++) {
@@ -237,7 +465,8 @@ Page({
       url: serverUrl + '/article/changefirsttype',
       method: "POST",
       data: {
-        type: that.data.department1,
+        name: that.data.department1,
+        fans:1
       },
       header: {
         'content-type': 'application/json'
@@ -249,14 +478,15 @@ Page({
         console.log(list);
         if (data.status == 200) {
           that.setData({
-            firstArticleList: list
+            firstArticleList: list,
+            page1: that.data.page1 + 1
           });
           var datelist1 = new Array();
           for (var i = 0; i < list.length; i++) {
             datelist1[i] = timer.js_date_another_time(that.data.firstArticleList[i].date);
           }
           that.setData({
-            datelist1: datelist1
+            datelist1: datelist1,
           })
         } else {
           // 失败弹出框
@@ -272,7 +502,8 @@ Page({
       url: serverUrl + '/article/changesecondtype',
       method: "POST",
       data: {
-        type: that.data.department2,
+        name: that.data.department2,
+        fans:1
       },
       header: {
         'content-type': 'application/json'
@@ -284,7 +515,8 @@ Page({
         console.log(list);
         if (data.status == 200) {
           that.setData({
-            secondArticleList: list
+            secondArticleList: list,
+            page2: that.data.page2 + 1
           });
           var datelist2 = new Array();
           for (var i = 0; i < list.length; i++) {
@@ -307,7 +539,8 @@ Page({
       url: serverUrl + '/article/changethirdtype',
       method: "POST",
       data: {
-        type: that.data.department3,
+        name: that.data.department3,
+        fans:1
       },
       header: {
         'content-type': 'application/json'
@@ -319,7 +552,8 @@ Page({
         console.log(list);
         if (data.status == 200) {
           that.setData({
-            thirdArticleList: list
+            thirdArticleList: list,
+            page3: that.data.page3 + 1
           });
           var datelist3 = new Array();
           for (var i = 0; i < list.length; i++) {
@@ -387,8 +621,37 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
+  bindscrolltolower:function(e){
+    this.onReachBottom()
+  },
   onReachBottom: function () {
-
+    if(this.data.currentTab == 0){
+    if (this.data.hasMoreData1) {
+      this.getInfo1('加载更多数据')
+    } else {
+      wx.showToast({
+        title: '没有更多数据',
+      })
+    }
+    }
+    else if (this.data.currentTab == 1) {
+      if (this.data.hasMoreData2) {
+        this.getInfo2('加载更多数据')
+      } else {
+        wx.showToast({
+          title: '没有更多数据',
+        })
+      }
+    }
+    else {
+      if (this.data.hasMoreData3) {
+        this.getInfo3('加载更多数据')
+      } else {
+        wx.showToast({
+          title: '没有更多数据',
+        })
+      }
+    }
   },
 
   /**
