@@ -332,10 +332,20 @@ Page({
         var list = data.data;
         console.log(list);
         if (data.status == 200) {
-          that.setData({
-            firstArticleList: list,
-            page1:that.data.page1+1
-          });
+          if(list.length<15){
+            that.setData({
+              firstArticleList: list,
+              hasMoreData1:false,
+              page1: 1
+            });
+          }
+          else{
+            that.setData({
+              firstArticleList: list,
+              page1: that.data.page1 + 1,
+              hasMoreData1: true,
+            });
+          }
           var datelist1 = new Array();
           for (var i = 0; i < list.length; i++) {
             datelist1[i] = timer.js_date_another_time(that.data.firstArticleList[i].date);
@@ -377,10 +387,20 @@ Page({
         var list = data.data;
         console.log(list);
         if (data.status == 200) {
-          that.setData({
-            secondArticleList: list,
-            page2: that.data.page2 + 1
-          });
+          if (list.length < 15) {
+            that.setData({
+              secondArticleList: list,
+              hasMoreData2: false,
+              page2: 1
+            });
+          }
+          else {
+            that.setData({
+              secondArticleList: list,
+              page2: that.data.page2 + 1,
+              hasMoreData2: true,
+            });
+          }
           var datelist2 = new Array();
           for (var i = 0; i < list.length; i++) {
             datelist2[i] = timer.js_date_another_time(that.data.secondArticleList[i].date);
@@ -422,10 +442,20 @@ Page({
         var list = data.data;
         console.log(list);
         if (data.status == 200) {
-          that.setData({
-            thirdArticleList: list,
-            page3: that.data.page3 + 1
-          });
+          if (list.length < 15) {
+            that.setData({
+              thirdArticleList: list,
+              hasMoreData3: false,
+              page3: 1
+            });
+          }
+          else {
+            that.setData({
+              thirdArticleList: list,
+              page3: that.data.page3 + 1,
+              hasMoreData3: true,
+            });
+          }
           var datelist3 = new Array();
           for (var i = 0; i < list.length; i++) {
             datelist3[i] = timer.js_date_another_time(that.data.thirdArticleList[i].date);
@@ -477,10 +507,20 @@ Page({
         var list = data.data;
         console.log(list);
         if (data.status == 200) {
-          that.setData({
-            firstArticleList: list,
-            page1: that.data.page1 + 1
-          });
+          if (list.length < 15) {
+            that.setData({
+              firstArticleList: list,
+              hasMoreData1: false,
+              page1: 1
+            });
+          }
+          else {
+            that.setData({
+              firstArticleList: list,
+              page1: that.data.page1 + 1,
+              hasMoreData1: true,
+            });
+          }
           var datelist1 = new Array();
           for (var i = 0; i < list.length; i++) {
             datelist1[i] = timer.js_date_another_time(that.data.firstArticleList[i].date);
@@ -514,10 +554,20 @@ Page({
         var list = data.data;
         console.log(list);
         if (data.status == 200) {
-          that.setData({
-            secondArticleList: list,
-            page2: that.data.page2 + 1
-          });
+          if (list.length < 15) {
+            that.setData({
+              secondArticleList: list,
+              hasMoreData2: false,
+              page2: 1
+            });
+          }
+          else {
+            that.setData({
+              secondArticleList: list,
+              page2: that.data.page2 + 1,
+              hasMoreData2: true,
+            });
+          }
           var datelist2 = new Array();
           for (var i = 0; i < list.length; i++) {
           datelist2[i] = timer.js_date_another_time(that.data.secondArticleList[i].date);
@@ -551,10 +601,20 @@ Page({
         var list = data.data;
         console.log(list);
         if (data.status == 200) {
-          that.setData({
-            thirdArticleList: list,
-            page3: that.data.page3 + 1
-          });
+          if (list.length < 15) {
+            that.setData({
+              thirdArticleList: list,
+              hasMoreData3: false,
+              page3: 1
+            });
+          }
+          else {
+            that.setData({
+              thirdArticleList: list,
+              page3: that.data.page3 + 1,
+              hasMoreData3: true,
+            });
+          }
           var datelist3 = new Array();
           for (var i = 0; i < list.length; i++) {
             datelist3[i] = timer.js_date_another_time(that.data.thirdArticleList[i].date);

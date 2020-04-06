@@ -38,7 +38,7 @@ Page({
             that.initQiniu(result.data);
             uploader.upload(that.data.filepath, (res) => {
               //对象存储中外链默认域名 http://p2mksxx.bkt.clouddn.com/
-              var logo = "http://q5mpyrjtf.bkt.clouddn.com/" + res.key //最后把这个完整的图片地址再次传送给后台
+              var logo = "http://user.lymgo.club/" + res.key //最后把这个完整的图片地址再次传送给后台
               //存form表单公司详情数据
               wx.request({
                 url: app.globalData.serverUrl + "/user/changeavatar",
@@ -81,7 +81,7 @@ Page({
       uptoken: res.uptoken,
       // uptokenURL: 'https://[yourserver.com]/api/uptoken',
       // uptoken: 'xxxx',
-      domain: 'http://q57vqpsee.bkt.clouddn.com', // bucket 域名，下载资源时用到。如果设置，会在 success callback 的 res 参数加上可以直接使用的 ImageURL 字段。否则需要自己拼接。
+      domain: 'http://user.lymgo.club', // bucket 域名，下载资源时用到。如果设置，会在 success callback 的 res 参数加上可以直接使用的 ImageURL 字段。否则需要自己拼接。
       shouldUseQiniuFileName: false
     };
     uploader.init(options);
