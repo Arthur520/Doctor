@@ -146,7 +146,7 @@ Page({
             })
             var datelist_ = new Array();
             for (var i = 0; i < list.length; i++) {
-              datelist_[i] = timer.js_date_another_time(that.data.firstArticleList[i].date);
+              datelist_[i] = timer.js_date_another_time(list[i].date);
             }
             that.setData({
               datelist1: that.data.datelist1.concat(datelist_)
@@ -159,7 +159,7 @@ Page({
             })
             var datelist_ = new Array();
             for (var i = 0; i < list.length; i++) {
-              datelist_[i] = timer.js_date_another_time(that.data.firstArticleList[i].date);
+              datelist_[i] = timer.js_date_another_time(list[i].date);
             }
             that.setData({
               datelist1: that.data.datelist1.concat(datelist_)
@@ -211,7 +211,7 @@ Page({
             })
             var datelist_ = new Array();
             for (var i = 0; i < list.length; i++) {
-              datelist_[i] = timer.js_date_another_time(that.data.secondArticleList[i].date);
+              datelist_[i] = timer.js_date_another_time(list[i].date);
             }
             that.setData({
               datelist2: that.data.datelist2.concat(datelist_)
@@ -224,7 +224,7 @@ Page({
             })
             var datelist_ = new Array();
             for (var i = 0; i < list.length; i++) {
-              datelist_[i] = timer.js_date_another_time(that.data.secondArticleList[i].date);
+              datelist_[i] = timer.js_date_another_time(list[i].date);
             }
             that.setData({
               datelist2: that.data.datelist2.concat(datelist_)
@@ -277,7 +277,7 @@ Page({
             })
             var datelist_ = new Array();
             for (var i = 0; i < list.length; i++) {
-              datelist_[i] = timer.js_date_another_time(that.data.thirdArticleList[i].date);
+              datelist_[i] = timer.js_date_another_time(list[i].date);
             }
             that.setData({
               datelist3: that.data.datelist3.concat(datelist_)
@@ -290,7 +290,7 @@ Page({
             })
             var datelist_ = new Array();
             for (var i = 0; i < list.length; i++) {
-              datelist_[i] = timer.js_date_another_time(that.data.thirdArticleList[i].date);
+              datelist_[i] = timer.js_date_another_time(list[i].date);
             }
             that.setData({
               datelist3: that.data.datelist3.concat(datelist_)

@@ -30,7 +30,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    serverUrl: "http://localhost:8080/doctor/",
+    serverUrl: "http://localhost:8080/doctor",
     address:"全国",
     complete_address:"全国-全国"
   }
