@@ -35,7 +35,6 @@ Page({
       swiperCurrent: e.detail.current
     })
   },
-  
   chuangEvent: function (e) {
     this.setData({
       swiperCurrent: e.currentTarget.id
@@ -143,7 +142,61 @@ Page({
       hospitallist:[],
       hasMoreData:true
     })
-
+    wx.login({
+      success: function (res) {
+        console.log(res)
+        if (res.code) {
+          console.log('通过login接口的code换取openid')
+          wx.request({
+            url: 'http://localhost:8080/doctor/user/openid',
+            data: {
+              username: res.code
+            },
+            method: 'POST',
+            header: { 'content-type': 'application/json' },
+            success: function (res) {
+              if (res.statusCode == 200) {
+                console.log(res.data.data);
+                app.globalData.openid = res.data.data;
+                wx.request({
+                  url: serverUrl + '/user/withoutpsw',
+                  method: "POST",
+                  data: {
+                    openid: app.globalData.openid,
+                  },
+                  header: {
+                    'content-type': 'application/json'
+                  },
+                  success: function (res) {
+                    var data = res.data;
+                    console.log(res);
+                    var list = data.data;
+                    if (data.status == 200) {
+                    app.globalData.userInfo = data.data;
+                    console.log(data.data);
+                    } else {
+                      // 失败弹出框
+                      wx.showToast({
+                        title: res.data.msg,
+                        icon: 'none',
+                        duration: 3000
+                      })
+                    }
+                  }
+                })
+              } else {
+                console.log(res.errMsg)
+              }
+            },
+            fail: function (error) {
+              console.info("获取用户openId失败");
+              console.info(error);
+            }
+          })
+        }
+      }
+    })
+    
     wx.request({
       url: serverUrl + '/hospital/address',
       method: "POST",

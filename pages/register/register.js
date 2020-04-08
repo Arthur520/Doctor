@@ -43,6 +43,7 @@ Page({
           username: username,
           password: password,
           nickname: nickname,
+          openid:app.globalData.openid,
           avatar: "/image/user.png"
         },
         header: {
