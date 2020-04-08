@@ -16,8 +16,6 @@ Page({
   },
   changeName:function(e){
     var serverUrl = app.globalData.serverUrl;
-    console.log(this.data.nickname);
-    console.log(app.globalData.userInfo.id);
     wx.request({
       url: serverUrl + '/user/changename',
       method: "POST",
@@ -30,9 +28,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var user = data.data;
-        console.log(user);
         if (data.status == 200) {   
           app.globalData.userInfo=user;
           wx.showToast({

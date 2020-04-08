@@ -99,7 +99,6 @@ Page({
         var data = res.data; 
         var list = data.data;
         var contentlistTem = that.data.hospitallist;
-        console.log(contentlistTem)
         if (list.length > 0) {
           wx.hideNavigationBarLoading()     //在当前页面隐藏导航条加载动画
           wx.hideLoading()               //隐藏 loading 提示框
@@ -117,7 +116,6 @@ Page({
               hasMoreData: true,
               page: that.data.page + 1
             })
-            console.log(that.data.hospitallist)
           }
         }
       },
@@ -135,7 +133,6 @@ Page({
     var serverUrl = app.globalData.serverUrl;
     var that = this;
     const complete_address = app.globalData.complete_address;
-    console.log(complete_address)
     that.setData({
       address: app.globalData.address,
       page:1,
@@ -144,9 +141,7 @@ Page({
     })
     wx.login({
       success: function (res) {
-        console.log(res)
         if (res.code) {
-          console.log('通过login接口的code换取openid')
           wx.request({
             url: 'http://localhost:8080/doctor/user/openid',
             data: {
@@ -156,7 +151,6 @@ Page({
             header: { 'content-type': 'application/json' },
             success: function (res) {
               if (res.statusCode == 200) {
-                console.log(res.data.data);
                 app.globalData.openid = res.data.data;
                 wx.request({
                   url: serverUrl + '/user/withoutpsw',
@@ -169,11 +163,9 @@ Page({
                   },
                   success: function (res) {
                     var data = res.data;
-                    console.log(res);
                     var list = data.data;
                     if (data.status == 200) {
                     app.globalData.userInfo = data.data;
-                    console.log(data.data);
                     } else {
                       // 失败弹出框
                       wx.showToast({
@@ -209,9 +201,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
-        console.log(list);
         var length = data.data.length;
         if (data.status == 200) {
           that.setData({
@@ -237,9 +227,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
-        console.log(list);
         if (data.status == 200) {
           that.setData({
             indexDoctorList: list

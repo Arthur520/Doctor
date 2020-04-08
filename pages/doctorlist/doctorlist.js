@@ -40,7 +40,6 @@ Page({
         var data = res.data;
         var list = data.data;
         var contentlistTem = that.data.doctorlist;
-        console.log(contentlistTem)
         if (list.length > 0) {
           wx.hideNavigationBarLoading()     //在当前页面隐藏导航条加载动画
           wx.hideLoading()               //隐藏 loading 提示框
@@ -95,10 +94,8 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
         var length = data.data.length;
-        console.log(list);
         if (data.status == 200) {
           that.setData({
             doctorlist: list,

@@ -21,28 +21,24 @@ Page({
     isInput1: false,
   },
   inputFocus(e) {
-    console.log(e, '键盘弹起')
     this.setData({
       height: e.detail.height,
       isInput: true
     })
   },
   inputBlur(e) {
-    console.log('键盘收起')
     this.setData({
       isInput: false,
       
     })
   },
   inputFocus1(e) {
-    console.log(e, '键盘弹起')
     this.setData({
       height: e.detail.height,
       isInput1: true
     })
   },
   inputBlur1(e) {
-    console.log('键盘收起')
     this.setData({
       isInput1: false,
       
@@ -75,10 +71,8 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
         var length=data.data.length;
-        console.log(list);
         if (data.status == 200) {
           that.setData({
             doctorReviewList: list,
@@ -130,10 +124,8 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
         var length=data.data.length;
-        console.log(list);
         if (data.status == 200) {
           that.setData({
             articleReviewList: list,
@@ -242,10 +234,8 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
         var length=data.data.length;
-        console.log(list);
         if (data.status == 200) {
           that.setData({
             doctorReviewList: list,
@@ -291,10 +281,8 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
         doctorReviewLength: length
-        console.log(list);
         if (data.status == 200) {
           that.setData({
             articleReviewList: list,
@@ -351,9 +339,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
-        console.log(list);
         var length = data.data.length;
         if (data.status == 200) {
           that.setData({
@@ -388,9 +374,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
-        console.log(list);
         if (data.status == 200) {
           that.setData({
             doctorlist: list,
@@ -416,9 +400,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
-        console.log(list);
         var length = data.data.length;
         if (data.status == 200) {
           that.setData({
@@ -453,9 +435,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
-        console.log(list);
         if (data.status == 200) {
           that.setData({
             articlelist: list,

@@ -96,11 +96,8 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
         var length = data.data.length;
-        console.log(length);
-        console.log(list);
         if (data.status == 200) {
           that.setData({
             doctorlist: list,

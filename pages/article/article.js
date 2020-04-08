@@ -19,14 +19,12 @@ Page({
     })
   },
   inputFocus(e) {
-    console.log(e, '键盘弹起')
     this.setData({
       height: e.detail.height,
       isInput: true
     })
   },
   inputBlur() {
-    console.log('键盘收起')
     this.setData({
       isInput: false
     })
@@ -63,9 +61,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
-        console.log(list);
         if (data.status == 200) {
           if (data.data != null) {
             var length = data.data.length;
@@ -124,9 +120,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var like_article = data.data;
-        console.log(like_article);
         if (data.status == 200) {
 
           if (like_article.status == "1") {
@@ -177,9 +171,7 @@ Page({
           wx.navigateTo({
             url: '/pages/login/login',
           })
-        } else {
-          console.log('用户点击取消')
-        }
+        } 
       }
     })
   },
@@ -211,9 +203,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var article = data.data;
-        console.log(article);
         if (data.status == 200) {
           that.setData({
             article: article
@@ -239,7 +229,6 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
         if (data.status == 200) {
           that.setData({
@@ -267,9 +256,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var doctor = data.data;
-        console.log(doctor);
         if (data.status == 200) {
           that.setData({
             doctor: doctor,
@@ -295,10 +282,8 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var length = data.data.length;
         var list = data.data;
-        console.log(list);
         if (data.status == 200) {
           that.setData({
             reviewlist: list,
@@ -353,9 +338,7 @@ Page({
         },
         success: function (res) {
           var data = res.data;
-          console.log(res);
           var like_article = data.data;
-          console.log(like_article);
           if (data.status == 200) {
             if (like_article.status == "1") {
               that.setData({
@@ -410,6 +393,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '分享',
+      desc: '文章信息',
+      path: '/pages/article?id=' + this.data.article.id
+    }
   }
 })

@@ -22,7 +22,6 @@ Page({
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success(res) {
         const filepath = res.tempFilePaths[0]
-        console.log(filepath)
         that.setData({
           filepath: filepath
         });

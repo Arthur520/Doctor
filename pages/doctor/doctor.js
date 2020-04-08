@@ -16,14 +16,12 @@ Page({
     length:0, 
   },
   inputFocus(e) {
-    console.log(e, '键盘弹起')
     this.setData({
       height: e.detail.height,
       isInput: true
     })
   },
   inputBlur() {
-    console.log('键盘收起')
     this.setData({
       isInput: false
     })
@@ -65,9 +63,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
-        console.log(list);
         if (data.status == 200) {
           if(data.data!=null){
           var length = data.data.length;
@@ -126,9 +122,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var like_doctor = data.data;
-        console.log(like_doctor);
         if (data.status == 200) {
           
           if(like_doctor.status=="1"){
@@ -179,9 +173,7 @@ Page({
           wx.navigateTo({
             url: '/pages/login/login',
           })
-        } else {
-          console.log('用户点击取消')
-        }
+        } 
       }
     })
   },
@@ -217,9 +209,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var doctor = data.data;
-        console.log(doctor);
         if (data.status == 200) {
           that.setData({
             doctor: doctor,
@@ -246,7 +236,6 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
         if (data.status == 200) {
           that.setData({
@@ -274,10 +263,8 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var length=data.data.length;
         var list = data.data;
-        console.log(list);
         if (data.status == 200) {
           that.setData({
             reviewlist: list,
@@ -333,9 +320,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var like_doctor = data.data;
-        console.log(like_doctor);
         if (data.status == 200) {
           if (like_doctor.status == "1") {
             that.setData({
@@ -367,9 +352,7 @@ Page({
         },
         success: function (res) {
           var data = res.data;
-          console.log(res);
           var doctor = data.data;
-          console.log(doctor);
           if (data.status == 200) {
             that.setData({
               doctor: doctor

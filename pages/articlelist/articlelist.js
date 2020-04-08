@@ -91,9 +91,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
-        console.log(list);
         if (data.status == 200) {
           that.setData({
             articlelist: list,

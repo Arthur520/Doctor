@@ -50,7 +50,6 @@ Page({
           'content-type': 'application/json'
         },
         success: function (res) {
-          console.log(res);
           app.globalData.userInfo = res.data.data;
           wx.hideLoading();
           if(res.data.data==null){

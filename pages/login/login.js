@@ -82,7 +82,6 @@ Page({
               })
             }, 2000) //延迟时间
             app.globalData.userInfo = res.data.data;
-            console.log(res.data);
           } else {
             // 失败弹出框
             wx.showToast({

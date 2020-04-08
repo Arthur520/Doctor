@@ -31,9 +31,7 @@ Page({
       },
       success: function (res) {
         var data = res.data;
-        console.log(res);
         var list = data.data;
-        console.log(list);
         var length = data.data.length;
         if (data.status == 200) {
           that.setData({
