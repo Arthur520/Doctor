@@ -13,7 +13,7 @@
   <text class="big">擅长疾病</text>
   <view class="button-list">
   <block wx:for="{{diseaselist}}" wx:key="*this"wx:for-item="disease"wx:for-index="index">
-  <button class="button"type="primary"size="mini" form-type='submit' style='font-size: 8pt !important;' bindtap="findDoctor"data-name="{{disease}}">{{disease}}</button>
+  <button class="button"type="primary"size="mini" form-type='submit' style='font-size: 10pt !important;' bindtap="findDoctor"data-name="{{disease}}">{{disease}}</button>
   </block>
   </view>
   <text class="big">个人简介</text>
