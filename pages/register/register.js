@@ -6,15 +6,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    check: false
+  },
+  save:function(e){
+    var serverUrl = app.globalData.serverUrl;
+    var that = this;  
+    that.setData({
+      check: !that.data.check
+    })   
   },
   doRegister: function (e) {
-    var me = this;
+    var that = this;
     var formObject = e.detail.value;
     var username = formObject.username;
     var password = formObject.password;
     var passwordconfirm = formObject.passwordconfirm;
     var nickname = formObject.nickname;
+    
     // 简单验证
     if (username.length == 0 || password.length == 0 || nickname.length ==0) {
       wx.showToast({
@@ -31,6 +39,9 @@ Page({
       })
     }
      else {
+      if (that.data.check == false) {
+        app.globalData.openid = null;
+      }
       wx.showLoading({
         title: '请等待...',
       });
@@ -78,7 +89,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**

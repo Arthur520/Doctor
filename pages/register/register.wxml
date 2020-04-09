@@ -33,6 +33,9 @@
         <input name="nickname" value='' class="inputText" placeholder="请输入昵称" />
       </view>
       <view class="line"></view>
+      <radio-group >
+  <radio class="radio_"checked='{{check}}'bindtap="save">勾选下次直接登录</radio>
+</radio-group>
 
       <!--按钮-->
       <view class='button'>
