@@ -23,9 +23,9 @@ Page({
     select1: false,
     select2:false,
     select3:false,
-    show1:"内科",
-    show2: "外科",
-    show3: "其他",
+    show1:"消化内科",
+    show2: "神经外科",
+    show3: "口腔科",
     department1: "消化内科",
     department2:"神经外科",
     department3: "口腔科"

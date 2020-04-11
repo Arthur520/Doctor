@@ -5,7 +5,11 @@ page {
     background-size:100% 100%;
 
 }
-
+.radio_ .wx-radio-input{
+  height: 30rpx;
+  width: 30rpx;
+  border: 1px solid #0044ff
+}
 .headers{
    display: flex;
   flex-direction: column;

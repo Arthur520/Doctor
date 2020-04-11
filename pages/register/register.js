@@ -9,7 +9,6 @@ Page({
     check: false
   },
   save:function(e){
-    var serverUrl = app.globalData.serverUrl;
     var that = this;  
     that.setData({
       check: !that.data.check

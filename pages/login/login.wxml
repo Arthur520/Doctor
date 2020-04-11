@@ -20,6 +20,9 @@
         <input name="password" value='' class="inputText" password="true" placeholder="请输入密码" />
       </view>
       <view class="line"></view>
+      <radio-group >
+  <radio class="radio_"checked='{{check}}'bindtap="save">勾选下次直接登录</radio>
+</radio-group>
 
       <!--按钮-->
       <view class='button'>

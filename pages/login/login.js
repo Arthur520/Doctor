@@ -6,7 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    check: false
+  },
+  save: function (e) {
+    var that = this;
+    that.setData({
+      check: !that.data.check
+    })
   },
   toRegisterPage: function () {
     wx.navigateTo({
@@ -21,7 +27,7 @@ Page({
 
   },
   doLogin: function (e) {
-    var me = this;
+    var that = this;
     var formObject = e.detail.value;
     var username = formObject.username;
     var password = formObject.password;
@@ -33,6 +39,9 @@ Page({
         duration: 3000
       })
     } else {
+      if (that.data.check == false) {
+        app.globalData.openid = null;
+      }
       var serverUrl = app.globalData.serverUrl;
       wx.showLoading({
         title: '请等待...',
@@ -43,7 +52,8 @@ Page({
         method: "POST",
         data: {
           username: username,
-          password: password
+          password: password,
+          openid: app.globalData.openid
         },
         header: {
           'content-type': 'application/json' // 默认值
