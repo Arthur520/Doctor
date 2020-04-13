@@ -10,7 +10,7 @@
       <!--账号-->
       <view class="inputView">
         <label class="usernameLabel">用户名</label>
-        <input name="username" value='' class="inputText" placeholder="请输入账号" />
+        <input name="username" value='' class="inputText" maxlength="16"placeholder="请输入账号" />
       </view>
 
       <view class="line"></view>
@@ -18,19 +18,19 @@
       <!--密码-->
       <view class="inputView">
         <label class="passwordLabel">密码</label>
-        <input name="password" value='' class="inputText" password="true" placeholder="请输入密码" />
+        <input name="password" value='' class="inputText" maxlength="16"password="true" placeholder="请输入密码" />
       </view>
       <view class="line"></view>
 
       <!--密码确认-->
       <view class="inputView">
         <label class="passwordConfirmLabel">密码确认</label>
-        <input name="passwordconfirm" value='' class="inputText" password="true" placeholder="输入密码" />
+        <input name="passwordconfirm" maxlength="16" value='' class="inputText" password="true" placeholder="输入密码" />
       </view>
       <view class="line"></view>
       <view class="inputView">
         <label class="nicknameLabel">昵称</label>
-        <input name="nickname" value='' class="inputText" placeholder="请输入昵称" />
+        <input name="nickname" maxlength="10" value='' class="inputText" placeholder="请输入昵称" />
       </view>
       <view class="line"></view>
       <radio-group >

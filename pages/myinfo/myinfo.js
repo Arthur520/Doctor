@@ -61,6 +61,17 @@ Page({
                       that.onLoad();
                     }
                   })
+                },
+                fail:function(res){
+                  wx.showModal({
+                    title: '提示',
+                    showCancel: false,
+                    confirmText: "我知道了",
+                    content: '文件最大为2M',
+                    success: function (res) {
+                      that.onLoad();
+                    }
+                  })
                 }
               })
             }, (error) => {

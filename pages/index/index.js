@@ -143,7 +143,7 @@ Page({
       success: function (res) {
         if (res.code) {
           wx.request({
-            url: 'http://localhost:8080/doctor/user/openid',
+            url: serverUrl + '/user/openid',  
             data: {
               username: res.code
             },

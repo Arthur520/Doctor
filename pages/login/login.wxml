@@ -10,14 +10,14 @@
       <!--账号-->
       <view class="inputView">
         <label class="loginLabel">用户名</label>
-        <input name="username" value='' class="inputText" placeholder="请输入账号" />
+        <input name="username" maxlength="16"value='' class="inputText" placeholder="请输入账号" />
       </view>
       <view class="line"></view>
 
       <!--密码-->
       <view class="inputView">
         <label class="loginLabel">密码</label>
-        <input name="password" value='' class="inputText" password="true" placeholder="请输入密码" />
+        <input name="password" maxlength="16"value='' class="inputText" password="true" placeholder="请输入密码" />
       </view>
       <view class="line"></view>
       <radio-group >
