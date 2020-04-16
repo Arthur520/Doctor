@@ -10,8 +10,6 @@ Page({
     winWidth: 0,
     winHeight: 0,
     currentTab: 0,
-    doctorReviewLength:0,
-    articleReviewLength:0,
     doctorReviewList:null,
     articleReviewList:null,
     focusInput: false,
@@ -282,7 +280,7 @@ Page({
       success: function (res) {
         var data = res.data;
         var list = data.data;
-        doctorReviewLength: length
+        var length = data.data.length;
         if (data.status == 200) {
           that.setData({
             articleReviewList: list,
@@ -315,7 +313,7 @@ Page({
   },
   toarticle: function (e) {
     wx.navigateTo({
-      url: '/pages/article/article?id=' + e.currentTarget.dataset.articleid
+      url: '/pages/article/article?id=' + e.currentTarget.dataset.articleid + "&doctorid=" + e.currentTarget.dataset.doctorid + "&title=" + e.currentTarget.dataset.title
     })
   },
   /**
@@ -437,6 +435,9 @@ Page({
         var data = res.data;
         var list = data.data;
         if (data.status == 200) {
+          for(var i=0;i<list.length;i++){
+            list[i].title=list[i].title.replace("\n","").replace("\n","")
+          }
           that.setData({
             articlelist: list,
           });

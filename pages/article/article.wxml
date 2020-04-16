@@ -35,7 +35,7 @@
   <block wx:for="{{reviewlist}}" wx:key="id" wx:for-item="review"wx:for-index="index">
   <view class="review-item">
     <view><image src="{{review.userimg}}" class="userImg"></image></view>
-    <text class="review-text">{{review.content}}\n<text class="date">{{datelist[index]}}</text></text>
+    <text class="review-text">{{review.nickname}}评论:\n{{review.content}}\n\n<text class="date">{{datelist[index]}}</text></text>
     </view>
   </block>
   </block>

@@ -7,29 +7,30 @@
 <swiper-item class="item-list-group">
     <view class="review-list">
   <block wx:if="{{length!=0}}">
-  <block wx:for="{{doctorReviewList}}" wx:key="id" wx:for-index="index"wx:for-item="review">
+  <block wx:for="{{doctorReviewList}}" wx:key="id" wx:for-item="review"wx:for-index="index">
   <view class="review-item"bindtap="doctorselect"data-doctorid="{{review.doctorid}}">
     <view><image src="{{review.userimg}}" class="userImg"></image></view>
-    <text class="review-text">评论{{doctorlist[index].name}}医生:{{review.content}}\n<text class="date">{{doctordatelist[index]}}</text></text>
+    <text class="review-text">评论{{doctorlist[index].name}}医生:{{review.content}}\n\n<text class="date">{{doctordatelist[index]}}</text></text> 
     </view>
   </block>
   </block>
-  <block wx:if="{{length==0}}">
+  <block wx:if="{{doctorReviewLength==0}}">
     <text class="nothing">暂无评论，快发表你的评论吧</text>
   </block>
     </view>
   </swiper-item>
   <swiper-item class="item-list-group">
-   <view class="review-list">
+
+    <view class="review-list">
   <block wx:if="{{length!=0}}">
-  <block wx:for="{{articleReviewList}}" wx:key="id"wx:for-index="index" wx:for-item="review">
-  <view class="review-item"bindtap="articleselect"data-articleid="{{review.articleid}}">
+  <block wx:for="{{articleReviewList}}" wx:key="id" wx:for-item="review"wx:for-index="index">
+  <view class="review-item"bindtap="articleselect"data-title="{{articlelist[index].title}}" data-doctorid="{{articlelist[index].doctorid}}"data-articleid="{{review.articleid}}">
     <view><image src="{{review.userimg}}" class="userImg"></image></view>
-    <text class="review-text">评论《{{articlelist[index].title}}》:{{review.content}}\n<text class="date">{{articledatelist[index]}}</text></text>
+    <text class="review-text">评论《{{articlelist[index].title}}》:{{review.content}}\n\n<text class="date">{{articledatelist[index]}}</text></text>
     </view>
   </block>
   </block>
-  <block wx:if="{{length==0}}">
+  <block wx:if="{{articleReviewLength==0}}">
     <text class="nothing">暂无评论，快发表你的评论吧</text>
   </block>
     </view>

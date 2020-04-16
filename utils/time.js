@@ -1,6 +1,6 @@
 function js_date_time(unixtime) {
   var dateTime = new Date(parseInt(unixtime));//注意，此处unixtime是接收到的原生数据，不需要做任何处理，网上有些代码写的是需要乘以1000，亲测不需要乘以1000，注意注意！！！！！！！！
-  console.log(dateTime.getUTCFullYear());
+  
 
   var year = dateTime.getFullYear();
   var month = (dateTime.getMonth() + 1 < 10 ? '0' + (dateTime.getMonth() + 1) : dateTime.getMonth() + 1);
@@ -29,7 +29,7 @@ function js_date_time(unixtime) {
 }
 function js_date_another_time(unixtime) {
   var dateTime = new Date(parseInt(unixtime));//注意，此处unixtime是接收到的原生数据，不需要做任何处理，网上有些代码写的是需要乘以1000，亲测不需要乘以1000，注意注意！！！！！！！！
-  console.log(dateTime.getUTCFullYear());
+  
 
   var year = dateTime.getFullYear();
   var month = (dateTime.getMonth() + 1 < 10 ? '0' + (dateTime.getMonth() + 1) : dateTime.getMonth() + 1);
