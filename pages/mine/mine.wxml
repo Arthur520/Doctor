@@ -14,7 +14,7 @@
 <view class="person-list">
 <view class="line"></view>
   <view class="list-item"bindtap="toMyinfo">
-    <image class="item-image" src="/image/search.png"></image>
+    <image class="item-image" src="/image/info.png"></image>
     <text class="item-text" >个人资料</text>
   </view>
 <view class="line"></view>
@@ -22,28 +22,28 @@
 
 
   <view class="list-item"bindtap="toIlike">
-    <image class="item-image" src="/image/search.png"></image>
+    <image class="item-image" src="/image/l.png"></image>
     <text class="item-text" >我的关注</text>
   </view>
 <view class="line"></view>
 
 
   <view class="list-item"bindtap="toCollection">
-    <image class="item-image" src="/image/search.png"></image>
+    <image class="item-image" src="/image/collect.png"></image>
     <text class="item-text" >我的收藏</text>
   </view>
   
 <view class="line"></view>
 
   <view class="list-item"bindtap='toComments'>
-    <image class="item-image" src="/image/search.png"></image>
+    <image class="item-image" src="/image/re.png"></image>
     <text class="item-text" >我的评论</text>
   </view>
 
 <view class="line"></view>
 
   <view class="list-item"bindtap='toUserComments'>
-    <image class="item-image" src="/image/search.png"></image>
+    <image class="item-image" src="/image/msg.png"></image>
     <text class="item-text" >我的回复</text>
     <block wx:if="{{count != 0}}">
     <image class="item-image" src="/image/message.png"></image>
@@ -58,7 +58,7 @@
 <view class="person-list">
 <view class="line"></view>
   <view class="list-item"bindtap="msg">
-    <image class="item-image" src="/image/search.png"></image>
+    <image class="item-image" src="/image/info.png"></image>
     <text class="item-text" >个人资料</text>
   </view>
 <view class="line"></view>
@@ -66,28 +66,28 @@
 
 
   <view class="list-item"bindtap="msg">
-    <image class="item-image" src="/image/search.png"></image>
+    <image class="item-image" src="/image/l.png"></image>
     <text class="item-text" >我的关注</text>
   </view>
 <view class="line"></view>
 
 
   <view class="list-item"bindtap="msg">
-    <image class="item-image" src="/image/search.png"></image>
+    <image class="item-image" src="/image/collect.png"></image>
     <text class="item-text" >我的收藏</text>
   </view>
   
 <view class="line"></view>
 
   <view class="list-item"bindtap='msg'>
-    <image class="item-image" src="/image/search.png"></image>
+    <image class="item-image" src="/image/re.png"></image>
     <text class="item-text" >我的评论</text>
   </view>
 
 <view class="line"></view>
 
   <view class="list-item"bindtap='msg'>
-    <image class="item-image" src="/image/search.png"></image>
+    <image class="item-image" src="/image/msg.png"></image>
     <text class="item-text" >我的回复</text>
   </view>
 

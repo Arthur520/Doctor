@@ -21,15 +21,14 @@
   <swiper-item class="item-list-group">
 
     <view class="review-list">
-  <block wx:if="{{length!=0}}">
-  <block wx:for="{{articleReviewList}}" wx:key="id" wx:for-item="review"wx:for-index="index">
-  <view class="review-item"bindtap="articleselect"data-title="{{articlelist[index].title}}" data-doctorid="{{articlelist[index].doctorid}}"data-articleid="{{review.articleid}}">
-    <view><image src="{{review.userimg}}" class="userImg"></image></view>
-    <text class="review-text">评论《{{articlelist[index].title}}》:{{review.content}}\n\n<text class="date">{{articledatelist[index]}}</text></text>
+  <block wx:if="{{length_a!=0}}">
+  <block wx:for="{{reviewlist_a}}" wx:key="id" wx:for-item="review"wx:for-index="index">
+  <view class="review-item"bindtap='focusButn2'data-touserid="{{review.userid}}"data-reviewid="{{review.review_articleid}}">
+    <text class="review-text">{{review.nickname}}回复{{review.tonickname}}:\n{{review.content}}\n\n<text class="date">{{datelist_a[index]}}</text></text>
     </view>
   </block>
   </block>
-  <block wx:if="{{articleReviewLength==0}}">
+  <block wx:if="{{length_a==0}}">
     <text class="nothing">暂无回复</text>
   </block>
     </view>
@@ -41,4 +40,11 @@
     <textarea class='input' maxlength='150' value="{{value}}" bindfocus="inputFocus1" focus='{{focusInput1}}' bindblur="inputBlur1"bindinput="bind1"></textarea>
   </view>
   <button class='send'style='font-size: 10pt !important;'type="primary"size="mini"bindtap="addUserReview1">回复</button>
+</view>
+
+<view class='commentInputView' style='bottom:{{height == ""?0:height}}px;' hidden='{{!isInput2}}'>
+  <view  class='commentInput'>
+    <textarea class='input' maxlength='150' value="{{value}}" bindfocus="inputFocus2" focus='{{focusInput2}}' bindblur="inputBlur2"bindinput="bind2"></textarea>
+  </view>
+  <button class='send'style='font-size: 10pt !important;'type="primary"size="mini"bindtap="addUserReview2">回复</button>
 </view>

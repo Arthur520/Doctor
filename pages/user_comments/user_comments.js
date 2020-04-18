@@ -10,19 +10,20 @@ Page({
     winWidth: 0,
     winHeight: 0,
     currentTab: 0,
-    focusInput: false,
+    focusInput2: false,
     focusInput1: false,
     height: '300',
-    isInput: false,
+    isInput2: false,
     isInput1: false,
     reviewlist: null,
-    articleReviewLength:null,
+    reviewlist_a: null,
+    length_a:0,
     length: 0,
   },
-  inputFocus(e) {
+  inputFocus2(e) {
     this.setData({
       height: e.detail.height,
-      isInput: true
+      isInput2: true
     })
   },
   inputFocus1(e) {
@@ -31,9 +32,9 @@ Page({
       isInput1: true
     })
   },
-  inputBlur() {
+  inputBlur2() {
     this.setData({
-      isInput: false
+      isInput2: false
     })
   },
   inputBlur1() {
@@ -42,10 +43,12 @@ Page({
     })
   },
 
-  focusButn: function () {
+  focusButn2: function (e) {
     this.setData({
-      focusInput: true,
-      isInput: true,
+      focusInput2: true,
+      isInput2: true,
+      touserid: e.currentTarget.dataset.touserid,
+      review_articleid: e.currentTarget.dataset.reviewid,
     })
   },
   focusButn1: function (e) {
@@ -56,7 +59,7 @@ Page({
       review_doctorid:e.currentTarget.dataset.reviewid,
     })
   },
-  bind: function (e) {
+  bind2: function (e) {
     this.setData({
       content: e.detail.value
     });
@@ -66,22 +69,22 @@ Page({
       content: e.detail.value
     });
   },
-  addUserReview: function (e) {
+  addUserReview2: function (e) {
     var that = this;
     var serverUrl = app.globalData.serverUrl;
     var touserid = that.data.touserid;
-    var review_doctorid = that.data.review_doctorid;
+    var review_articleid = that.data.review_articleid;
     wx.showLoading({
       title: '请等待...',
     });
     var content = that.data.content;
     wx.request({
-      url: serverUrl + '/user/adduserreview',
+      url: serverUrl + '/user/adduserreview1_a',
       method: "POST",
       data: {
         userid: app.globalData.userInfo.id,
         touserid: touserid,
-        review_doctorid: review_doctorid,
+        review_articleid: review_articleid,
         content: content
       },
       header: {
@@ -92,22 +95,22 @@ Page({
         var list = data.data;
         if (data.status == 200) {
           if (data.data != null) {
-            var length = data.data.length;
+            var length_a = data.data.length;
             that.setData({
-              reviewlist: list,
-              length: length
+              reviewlist_a: list,
+              length_a: length_a
             });
             wx.showToast({
               title: '回复成功',
               icon: 'success',
               duration: 1000
             })
-            var datelist = new Array();
+            var datelist_a = new Array();
             for (var i = 0; i < list.length; i++) {
-              datelist[i] = timer.js_date_time(that.data.reviewlist[i].date); console.log(datelist[i]);
+              datelist_a[i] = timer.js_date_time(that.data.reviewlist_a[i].date); 
             }
             that.setData({
-              datelist: datelist
+              datelist_a: datelist_a
             })
           } else {
             // 失败弹出框
@@ -186,7 +189,7 @@ Page({
             })
             var datelist = new Array();
             for (var i = 0; i < list.length; i++) {
-              datelist[i] = timer.js_date_time(that.data.reviewlist[i].date); console.log(datelist[i]);
+              datelist[i] = timer.js_date_time(that.data.reviewlist[i].date); 
             }
             that.setData({
               datelist: datelist
@@ -240,10 +243,45 @@ Page({
           });
           var datelist = new Array();
           for (var i = 0; i < list.length; i++) {
-            datelist[i] = timer.js_date_time(that.data.reviewlist[i].date); console.log(datelist[i]);
+            datelist[i] = timer.js_date_time(that.data.reviewlist[i].date); 
           }
           that.setData({
             datelist: datelist
+          })
+        } else {
+          // 失败弹出框
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+        }
+      }
+    })
+    wx.request({
+      url: serverUrl + '/user/seeuserreview_a',
+      method: "POST",
+      data: {
+        touserid: that.data.userInfo.id,
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        var data = res.data;
+        var length_a = data.data.length;
+        var list = data.data;
+        if (data.status == 200) {
+          that.setData({
+            reviewlist_a: list,
+            length_a: length_a
+          });
+          var datelist_a = new Array();
+          for (var i = 0; i < list.length; i++) {
+            datelist_a[i] = timer.js_date_time(that.data.reviewlist_a[i].date); 
+          }
+          that.setData({
+            datelist_a: datelist_a
           })
         } else {
           // 失败弹出框

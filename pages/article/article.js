@@ -76,7 +76,7 @@ Page({
             })
             var datelist = new Array();
             for (var i = 0; i < list.length; i++) {
-              datelist[i] = timer.js_date_time(that.data.reviewlist[i].date); console.log(datelist[i]);
+              datelist[i] = timer.js_date_time(that.data.reviewlist[i].date); 
             }
             that.setData({
               datelist: datelist
@@ -173,6 +173,11 @@ Page({
           })
         } 
       }
+    })
+  },
+  touserreview: function (e) {
+    wx.navigateTo({
+      url: '/pages/reviewlist_a/reviewlist_a?touserid=' + e.currentTarget.dataset.touserid + "&review_articleid=" + e.currentTarget.dataset.review_articleid
     })
   },
   /**
@@ -291,7 +296,7 @@ Page({
           });
           var datelist = new Array();
           for (var i = 0; i < list.length; i++) {
-            datelist[i] = timer.js_date_time(that.data.reviewlist[i].date); console.log(datelist[i]);
+            datelist[i] = timer.js_date_time(that.data.reviewlist[i].date); 
           }
           that.setData({
             datelist: datelist

@@ -1,4 +1,4 @@
-// pages/reviewlist/reviewlist.js
+// pages/reviewlist_a/reviewlist_a.js
 var timer = require("../../utils/time.js");
 const app = getApp();
 Page({
@@ -13,7 +13,7 @@ Page({
     isInput: false,
     isInput1: false,
     reviewlist: null,
-    length: 0, 
+    length: 0,
   },
   inputFocus(e) {
     this.setData({
@@ -79,19 +79,19 @@ Page({
   addUserReview: function (e) {
     var that = this;
     var serverUrl = app.globalData.serverUrl;
-    var touserid=that.data.touserid;
-    var review_doctorid = that.data.review_doctorid;
+    var touserid = that.data.touserid;
+    var review_articleid = that.data.review_articleid;
     wx.showLoading({
       title: '请等待...',
     });
     var content = that.data.content;
     wx.request({
-      url: serverUrl + '/user/adduserreview',
+      url: serverUrl + '/user/adduserreview_a',
       method: "POST",
       data: {
         userid: app.globalData.userInfo.id,
         touserid: touserid,
-        review_doctorid: review_doctorid,
+        review_articleid: review_articleid,
         content: content
       },
       header: {
@@ -114,7 +114,7 @@ Page({
             })
             var datelist = new Array();
             for (var i = 0; i < list.length; i++) {
-              datelist[i] = timer.js_date_time(that.data.reviewlist[i].date); 
+              datelist[i] = timer.js_date_time(that.data.reviewlist[i].date); console.log(datelist[i]);
             }
             that.setData({
               datelist: datelist
@@ -143,18 +143,18 @@ Page({
     var that = this;
     var serverUrl = app.globalData.serverUrl;
     var touserid = that.data.touserid1;
-    var review_doctorid = that.data.review_doctorid;
+    var review_articleid = that.data.review_articleid;
     wx.showLoading({
       title: '请等待...',
     });
     var content = that.data.content;
     wx.request({
-      url: serverUrl + '/user/adduserreview',
+      url: serverUrl + '/user/adduserreview_a',
       method: "POST",
       data: {
         userid: app.globalData.userInfo.id,
         touserid: touserid,
-        review_doctorid: review_doctorid,
+        review_articleid: review_articleid,
         content: content
       },
       header: {
@@ -208,18 +208,18 @@ Page({
   onLoad: function (options) {
     var that = this;
     var serverUrl = app.globalData.serverUrl;
-    const review_doctorid = options.review_doctorid;
+    const review_articleid = options.review_articleid;
     const touserid = options.touserid;
     that.setData({
       userInfo: app.globalData.userInfo,
-      review_doctorid: review_doctorid,
-      touserid:touserid,
+      review_articleid: review_articleid,
+      touserid: touserid,
     })
     wx.request({
-      url: serverUrl + '/user/touserreview',
+      url: serverUrl + '/user/touserreview_a',
       method: "POST",
       data: {
-        review_doctorid: review_doctorid,
+        review_articleid: review_articleid,
       },
       header: {
         'content-type': 'application/json'

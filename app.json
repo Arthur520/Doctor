@@ -19,7 +19,8 @@
     "pages/hospitalDoctorlist/hospitalDoctorlist",
     "pages/articlelist/articlelist",
     "pages/reviewlist/reviewlist",
-    "pages/user_comments/user_comments"
+    "pages/user_comments/user_comments",
+    "pages/reviewlist_a/reviewlist_a"
   ],
   "window": {
     "backgroundTextStyle": "light",

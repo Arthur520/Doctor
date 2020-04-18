@@ -1,0 +1,52 @@
+<!--pages/reviewlist_a/reviewlist_a.wxml-->
+<view class="review-list">
+  <block wx:if="{{length!=0}}">
+  <block wx:for="{{reviewlist}}" wx:key="id" wx:for-item="review"wx:for-index="index">
+  <block wx:if="{{userInfo != null}}">
+  <view class="review-item" bindtap='focusButn1'data-touserid1="{{review.userid}}">
+    <text class="review-text">{{review.nickname}}回复{{review.tonickname}}:\n{{review.content}}\n\n<text class="date">{{datelist[index]}}</text></text> 
+    </view>
+</block>
+<block wx:if="{{userInfo == null}}">
+  <view class="review-item" bindtap='goLogin'>
+    <text class="review-text">{{review.nickname}}回复{{review.tonickname}}:\n{{review.content}}\n\n<text class="date">{{datelist[index]}}</text></text> 
+    </view>
+</block>
+  </block>
+  </block>
+  <block wx:if="{{length==0}}">
+    <text class="nothing">暂无回复，快发表你的回复吧</text>
+  </block>
+    </view>
+    <view class="section bottom-line">
+		<text>到底啦</text>
+	</view>
+  <view class="bottom" style="width:100%;height:35px;background-color:#f0f0f0;position:fixed; bottom:0;">
+    <block wx:if="{{userInfo != null}}">
+    <view class="picText" bindtap='focusButn'>
+      <image class="review" src="/image/review.png"></image>
+      <text class="pictitle">回复</text>
+    </view>
+    </block>
+    <block wx:if="{{userInfo == null}}">
+    <view class="picText" bindtap='goLogin'>
+      <image class="review" src="/image/review.png"></image>
+      <text class="pictitle">回复</text>
+    </view>
+    </block>
+ 
+</view>
+<view class='commentInputView' style='bottom:{{height == ""?0:height}}px;' hidden='{{!isInput}}'>
+  <view  class='commentInput'>
+    <textarea class='input' maxlength='150' value="{{value}}" bindfocus="inputFocus" focus='{{focusInput}}' bindblur="inputBlur"bindinput="bind"></textarea>
+  </view>
+  <button class='send'style='font-size: 10pt !important;'type="primary"size="mini"bindtap="addUserReview">回复</button>
+</view>
+
+<view class='commentInputView' style='bottom:{{height == ""?0:height}}px;' hidden='{{!isInput1}}'>
+  <view  class='commentInput'>
+    <textarea class='input' maxlength='150' value="{{value}}" bindfocus="inputFocus1" focus='{{focusInput1}}' bindblur="inputBlur1"bindinput="bind1"></textarea>
+  </view>
+  <button class='send'style='font-size: 10pt !important;'type="primary"size="mini"bindtap="addUserReview1">回复</button>
+</view>
+

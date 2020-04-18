@@ -33,7 +33,7 @@
   <view class="review-list">
   <block wx:if="{{length!=0}}">
   <block wx:for="{{reviewlist}}" wx:key="id" wx:for-item="review"wx:for-index="index">
-  <view class="review-item">
+  <view class="review-item"bindtap="touserreview"data-touserid="{{review.userid}}"data-review_articleid="{{review.id}}">
     <view><image src="{{review.userimg}}" class="userImg"></image></view>
     <text class="review-text">{{review.nickname}}评论:\n{{review.content}}\n\n<text class="date">{{datelist[index]}}</text></text>
     </view>
