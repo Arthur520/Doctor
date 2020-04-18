@@ -38,6 +38,11 @@ Page({
       url: '/pages/search/search?diseaseName=' + e.currentTarget.dataset.name + "&choice=" + 4
     })
   },
+  touserreview: function (e) {
+    wx.navigateTo({
+      url: '/pages/reviewlist/reviewlist?touserid=' + e.currentTarget.dataset.touserid + "&review_doctorid=" + e.currentTarget.dataset.review_doctorid
+    })
+  },
   bind: function (e) {
     this.setData({
       content: e.detail.value
@@ -341,6 +346,39 @@ Page({
         }
       }
     })
+      if (app.globalData.userInfo != null) {
+        wx.request({
+          url: serverUrl + '/user/userreviewcount',
+          method: "POST",
+          data: {
+            touserid: app.globalData.userInfo.id,
+          },
+          header: {
+            'content-type': 'application/json'
+          },
+          success: function (res) {
+            var data = res.data;
+            var count = data.data;
+            if (data.status == 200) {
+              that.setData({
+                count: count
+              });
+              if (count != 0) {
+                wx.showTabBarRedDot({ index: 2 });
+              }
+            } else {
+              // 失败弹出框
+              wx.showToast({
+                title: res.data.msg,
+                icon: 'none',
+                duration: 3000
+              })
+            }
+          }
+        })
+        wx.hideLoading();
+      } 
+
       wx.request({
         url: serverUrl + '/doctor/query',
         method: "POST",

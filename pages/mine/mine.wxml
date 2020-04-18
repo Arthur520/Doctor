@@ -39,6 +39,17 @@
     <image class="item-image" src="/image/search.png"></image>
     <text class="item-text" >我的评论</text>
   </view>
+
+<view class="line"></view>
+
+  <view class="list-item"bindtap='toUserComments'>
+    <image class="item-image" src="/image/search.png"></image>
+    <text class="item-text" >我的回复</text>
+    <block wx:if="{{count != 0}}">
+    <image class="item-image" src="/image/message.png"></image>
+    </block>
+  </view>
+
 </view>
 <view class="line"></view>
 </block>
@@ -72,6 +83,14 @@
     <image class="item-image" src="/image/search.png"></image>
     <text class="item-text" >我的评论</text>
   </view>
+
+<view class="line"></view>
+
+  <view class="list-item"bindtap='msg'>
+    <image class="item-image" src="/image/search.png"></image>
+    <text class="item-text" >我的回复</text>
+  </view>
+
 </view>
 <view class="line"></view>
 </block>

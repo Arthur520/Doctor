@@ -59,7 +59,6 @@ Page({
           'content-type': 'application/json' // 默认值
         },
         success: function (res) {
-          wx.hideLoading();
           if (res.data.status == 200) {
             // 登录成功跳转 
               wx.showToast({
@@ -67,6 +66,7 @@ Page({
               icon: 'success',
               duration: 2000
             })
+            app.globalData.userInfo = res.data.data;
             setTimeout(function () {
               wx.navigateBack({
                 delta: 1,
@@ -91,7 +91,7 @@ Page({
                 }
               })
             }, 2000) //延迟时间
-            app.globalData.userInfo = res.data.data;
+            
           } else {
             // 失败弹出框
             wx.showToast({

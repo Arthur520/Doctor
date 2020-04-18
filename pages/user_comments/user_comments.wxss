@@ -1,0 +1,133 @@
+/* pages/user_comments/user_comments.wxss */
+Page {
+  background-color: #f1f1f1;
+}
+.swiper-tab {
+  background-color: #fff;
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+}
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 50%;
+  color: #797979;
+}
+.on {
+  color: #ca0c16;
+  border-bottom: 5rpx solid #ca0c16;
+}
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.review-list{
+  display: flex;
+  flex-direction: column;
+}
+.review-list .review-item{
+  padding: 10rpx 0;
+  border-bottom: 1px solid #D4D4D4;
+  display:flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.userImg{
+  width: 60rpx;
+  height:72rpx;
+  
+}
+.review-text{ 
+  font-size: 21rpx;
+  word-break: break-all;
+  margin-left:10rpx;
+}
+.date{
+  font-size: 21rpx;
+  word-break: break-all;
+  position: absolute;
+  bottom:0;
+  right:0;
+}
+.bottom{
+  display: flex;
+  justify-content:center;
+  padding: 10rpx 0;
+}
+.like{
+  width: 45rpx;
+  height: 45rpx;
+}
+.review{
+  width: 45rpx;
+  height: 45rpx;
+}
+.share{
+  width: 50rpx;
+  height: 50rpx;
+  background-size: 45rpx 45rpx;
+  background-repeat:no-repeat;
+}
+.share::after{
+  border:none; 
+}
+.picText{
+  display: flex;
+  flex-direction: column;
+}
+.pictitle{
+  font-size: 24rpx;
+}
+
+.commentInputView{
+  width: 100%;
+  height: 100rpx;
+  background-color: rgba(204, 204, 204, 0.61);
+  padding: 4%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+}
+.commentInput{
+  width:70%;
+  background-color:#fff;
+  font-size:28rpx;
+  border-radius:15rpx;
+  display: flex;
+  align-items: center;
+  
+}
+ 
+.input{
+  width:100%;
+  height:100rpx;
+  padding: 15rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  line-height-step:20rpx;
+  border: 0;
+}
+.send{
+  width: 10rpx;
+  height: 65rpx;
+  color: #fff;
+  font-size: 34rpx;
+  border: 0;
+  margin-left:40rpx;
+  margin-top:25rpx;
+}
+.bottom-line{
+  display: flex;
+  height: 100rpx;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-line text{
+  font-size: 10pt;
+  color: #666;
+}

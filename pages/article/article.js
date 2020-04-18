@@ -359,6 +359,35 @@ Page({
           }
         }
       })
+      wx.request({
+        url: serverUrl + '/user/userreviewcount',
+        method: "POST",
+        data: {
+          touserid: app.globalData.userInfo.id,
+        },
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function (res) {
+          var data = res.data;
+          var count = data.data;
+          if (data.status == 200) {
+            that.setData({
+              count: count
+            });
+            if (count != 0) {
+              wx.showTabBarRedDot({ index: 2 });
+            }
+          } else {
+            // 失败弹出框
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 3000
+            })
+          }
+        }
+      })
     }
   },
 

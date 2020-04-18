@@ -70,15 +70,36 @@ Page({
             })
           }
           else{
-          wx.switchTab({
-            url: '../mine/mine',
-            success: function (e) {
-              //页面跳转后自动刷新
-              var page = getCurrentPages().pop();
-              if (page == undefined || page == null) return;
-              page.onLoad();
-            }
-          })
+            wx.showToast({
+              title: '注册成功',
+              icon: 'success',
+              duration: 2000
+            })
+            setTimeout(function () {
+              wx.navigateBack({
+                delta: 2,
+                fail: function (e) {
+                  wx.switchTab({
+                    url: '../mine/mine',
+                    success: function (e) {
+                      //刷新页面
+                      var page = getCurrentPages().pop();
+                      if (page == undefined || page == null) return;
+                      //加载page中的onload方法
+                      page.onLoad();
+                    }
+                  })
+                },
+                success: function (e) {
+                  //刷新页面
+                  var page = getCurrentPages().pop();
+                  if (page == undefined || page == null) return;
+                  //加载page中的onload方法
+                  page.onShow();
+                }
+              })
+            }, 2000) //延迟时间
+            app.globalData.userInfo = res.data.data;
         }
         }
       })

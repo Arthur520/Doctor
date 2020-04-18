@@ -45,6 +45,34 @@ Page({
       url: '../comments/comments',
     })
   },
+  toUserComments: function () {
+    var that = this;
+    var serverUrl = app.globalData.serverUrl;
+    wx.request({
+      url: serverUrl + '/user/changecount',
+      method: "POST",
+      data: {
+        touserid: app.globalData.userInfo.id,
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        if (res.data.status == 200) {
+          wx.navigateTo({
+            url: '../user_comments/user_comments',
+          })
+        } else {
+          // 失败弹出框
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -66,17 +94,52 @@ Page({
    */
   onShow: function () {
     var that = this;
+    var serverUrl = app.globalData.serverUrl;
     var userInfo = app.globalData.userInfo;
     if (userInfo != null) {
       that.setData({
         avatar: userInfo.avatar,
         userInfo:app.globalData.userInfo
       });
+      wx.request({
+        url: serverUrl + '/user/userreviewcount',
+        method: "POST",
+        data: {
+          touserid: that.data.userInfo.id,
+        },
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function (res) {
+          var data = res.data;
+          var count = data.data;
+          if (data.status == 200) {
+            that.setData({
+              count:count
+            });
+            if (count != 0) {
+              wx.showTabBarRedDot({ index: 2 });
+            }
+            else{
+              wx.hideTabBarRedDot({ index: 2 });
+            }
+          } else {
+            // 失败弹出框
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 3000
+            })
+          }
+        }
+      })
+      wx.hideLoading();
     } else {
       that.setData({
         avatar: '/image/user.png'
       })
     }
+    
   },
 
   /**
