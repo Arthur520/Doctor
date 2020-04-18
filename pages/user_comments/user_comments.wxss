@@ -46,6 +46,12 @@ Page {
   word-break: break-all;
   margin-left:10rpx;
 }
+.review-text1{ 
+  font-size: 21rpx;
+  word-break: break-all;
+  margin-left:10rpx;
+  color: #060899;
+}
 .date{
   font-size: 21rpx;
   word-break: break-all;
