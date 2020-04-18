@@ -30,7 +30,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    serverUrl: "http://192.168.1.13:8080/doctor",
+    serverUrl: "https://www.lymgo.club/doctor",
     address:"全国",
     complete_address:"全国-全国",
     openid:null,
